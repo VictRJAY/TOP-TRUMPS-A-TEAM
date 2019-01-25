@@ -1,0 +1,130 @@
+//saving Game & Round Data
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+Class  saveGameReport2 {
+
+String filename="";
+ArrayList<Integer> PlayerList = new ArrayList<integer>();
+ArrayList<String> drawPile = new ArrayList<String>();
+ArrayList<string>playerDecks = new ArrayList<String> ();
+ArrayList<String> roundcards = new ArrayList<String>();
+ArrayList<String> PlayerResults = new ArrayList<String>();
+
+Public saveGameReport (ArrayList<Integer> shuffledDeck,ArrayList<Integer> drawPile,ArrayList<Integer> playerDecks,ArrayList<string> gameResults){
+this.PlayerList=playerDecks[];
+this.playerDecks=playerDecks;
+this.drawPile=drawPile;
+this.PlayerResults=gameResults;
+}
+
+private static void saveRoundData(){
+//Public string content=();
+//SaveToFile(Content,fileName);
+//saveToDatabase();  //code to do after getting idea on the database structure
+}
+private static  voidSaveGameData(){
+String content =( PlayerList + "," +drawPile +","+playerDecks +","+PlayerResults);
+String FileName =playerResults.playerID;
+SaveToFile(content,FileName);
+saveToDatabase();//code to do after getting idea on the database structure
+
+}
+public static void saveToFile(String content, String fileName) {
+		File f = new File(fileName + ".txt");
+		if (!f.exists()) {
+			try {
+				f.createNewFile();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		try {
+			FileWriter fw = new FileWriter(fileName + ".txt", true);
+			fw.write(content + "\r\n");
+			fw.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+}
+}
+//Displaying game & Round Data
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+Class  saveGameReportDisplay{
+ArrayList<Integer> PlayerList = new ArrayList<integer>();
+ArrayList<String> cardInformation = new ArrayList<String>();
+ArrayList<string>playerDecks = new ArrayList<String> ();
+ArrayList<String> roundcards = new ArrayList<String>();
+
+private static void DisplayRoundData(String players,String attributesSelection,String Results){
+SaveToFile();
+saveToDatabase(); //code to handle the database operations
+
+}
+private static DisplayGameData(){
+SaveToFile();
+saveToDatabase(); //code to handle the database operations
+
+}
+public void openGameData(string Filename){
+         FileReader fr = new FileReader(Filename); 
+         ArrayList< String> a = new ArrayList<String>();
+         fr.read(a);   // reads the content to the array
+         for(char c : a)
+         System.out.print(c);   // prints the records on the screen
+        fr.close();
+}
+
+//Setting up game
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+Class SetupGame{
+System.out.println("--------------------");
+System.out.println("--- Top Trumps   ---");
+System.out.println("--------------------");
+
+System.out.println("Do you want to see past results or play a game?");
+System.out.println("   1: Print Game Statistics");
+System.out.println("   2: Play game");
+Scanner s = new Scanner(System.in);
+
+  while (s!="") {
+	System.out.println("Enter the number for your selection: ");
+	int selection = s.nextInt();
+	s.nextLine();
+  
+	if (selection == 1) {
+		 saveGameReport.DisplayGameData();
+     
+	  } else if (selection == 2) {
+		   System.out.println();
+		   System.out.println();
+		   System.out.println();
+		   System.out.println("Game Start");
+
+        System.out.println(" Would you like to play the game on Command Line or Online?");
+        System.out.println("   -c : Command Line");
+        System.out.println("   -o:  Online mode ");
+        String gameMode = s.nextString();
+        if (gameMode ="-c"){   new GameCalc();     }
+        else if(gameMode ="-o"){    OnlineGame();}
+
+private void onlineGame(String URL){
+// Code to open the URL for the online game
+}
+}
+}
