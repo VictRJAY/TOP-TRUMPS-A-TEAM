@@ -11,6 +11,8 @@ public class Main {
 			c.OneRound();
 		}
 		
+		System.out.println("GAME IS OVER");
+		
 //		ArrayList<String> p = c.ListOfPlayers(c.numberOfPlayers);
 //		System.out.println(p);
 		

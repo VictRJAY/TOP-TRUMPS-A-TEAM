@@ -3,12 +3,20 @@ import java.util.Collections;
 import java.util.Scanner;
 
 public class GameCalc extends Deck {
+	
+	// add 
+	//'THIS IS HOW MANY CARDS YOU HAVE LEFT'
+	// load cards from .txt file
+	// Your card info
+	// Round information (who won, what was the winning card)
+	// 
 
 	ArrayList<Integer> shuffledDeck = new ArrayList<Integer>(); 
 	ArrayList<Integer> drawPile = new ArrayList<Integer>(); // where we store drawn cards
 	ArrayList<Integer> roundCards = new ArrayList<Integer>(); // cards played in a given round
 
-	ArrayList<Integer> playerDecks[];
+	ArrayList<Integer> playerDecks[]; // players decks are stored here syso('you have: ' + playerDecks[0] + ' cards left';
+	
 	int numberOfPlayers; // needed for calculations
 	int roundCounter; // next two variables are needed for specs
 	int drawCounter;
@@ -19,8 +27,8 @@ public class GameCalc extends Deck {
 	boolean draw = false; // needed to not run AssignCard methods in OneRound() (currently line 38)
 
 	
-	int[][] playerRoundWins = new int[5][2];
-	ArrayList<Integer> currentPlayerPositions = new ArrayList<Integer>();
+	int[][] playerRoundWins = new int[5][2]; // Here we store original player ID's and how many rounds they've won
+	ArrayList<Integer> currentPlayerPositions = new ArrayList<Integer>(); // here we store the positions of the players left in the game
 
 	// ArrayList<Integer> currentPlayerPositions = new ArrayList<>();
 
@@ -45,9 +53,12 @@ public class GameCalc extends Deck {
 		if(draw == false) {
 		AwardAllCards(winner, roundCards);
 		checkLoser(playerDecks);
+		}else {
+			System.out.println("THIS ROUND WAS A DRAW"); // testing
+		}
 		
 	
-		}
+		
 				System.out.println("ROUND: " + roundCounter); // everything here is just testing
 				
 				for(int i = 0; i<playerRoundWins.length;i++) {
@@ -283,14 +294,16 @@ public class GameCalc extends Deck {
 
 	public void checkLoser(ArrayList<Integer>[] playerDecks) { // to be run after every round
 		for (int i = 0; i < playerDecks.length; i++) {
-			if (playerDecks.length == 1) {
-				playerWins = true;
-			} else if (playerDecks[i].isEmpty()) {
+			 if (playerDecks[i].isEmpty()) {
 				playerEliminated(i);
 				if(i == 0) {
 					userEliminated = true;
 				}
 			}
+			 if (playerDecks.length == 1) {
+					playerWins = true;
+					// playerDecks[0] (compare current player positons) compare to playerRoundWins(positions), the corresponding playerID is the winner
+				}
 		}
 	}
 
