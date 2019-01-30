@@ -3,7 +3,7 @@
 	<head>
 		<!-- Web page title -->
     	<title>Top Trumps</title>
-    	
+
     	<!-- Import JQuery, as it provides functions you will probably find useful (see https://jquery.com/) -->
     	<script src="https://code.jquery.com/jquery-2.1.1.js"></script>
     	<script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
@@ -20,12 +20,15 @@
 
 	</head>
 
-    <body onload="initalize()"> <!-- Call the initalize method when the page loads -->
+    <body onload="initalize()" style="background-image: linear-gradient(brown, white);"> <!-- Call the initalize method when the page loads -->
     	
-    	<div class="container">
-
-			<!-- Add your HTML Here -->
-		
+    	<div class="container" >
+	    	<div class= "row p-5">
+	    	
+	    				<!-- Add your HTML Here -->
+				<button type="button" class="btn btn-secondary col-sm m-2" onclick="startGame(); return false;"> New Game </button>
+				<button type="button" class="btn btn-secondary col-sm m-2" onclick="getStats(); return false;"> Show Statistics </button>
+	    	</div>
 		</div>
 		
 		<script type="text/javascript">
@@ -38,10 +41,21 @@
 				// --------------------------------------------------------------------------
 				
 				// For example, lets call our sample methods
-				helloJSONList();
-				helloWord("Student");
+				//helloJSONList();
+				//helloWord("Student");
 				
 			}
+			
+			function startGame(){
+			
+				 window.location = window.location + '/game';
+			}
+			
+			function getStats(){
+			
+				 window.location = window.location + '/stats';
+			}
+			
 			
 			// -----------------------------------------
 			// Add your other Javascript methods Here
