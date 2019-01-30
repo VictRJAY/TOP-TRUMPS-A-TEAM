@@ -25,7 +25,6 @@
     	<div class="container" >
 	    	<div class= "row p-5">
 	    	
-	    				<!-- Add your HTML Here -->
 				<button type="button" class="btn btn-secondary col-sm m-2" onclick="startGame(); return false;"> New Game </button>
 				<button type="button" class="btn btn-secondary col-sm m-2" onclick="getStats(); return false;"> Show Statistics </button>
 	    	</div>
