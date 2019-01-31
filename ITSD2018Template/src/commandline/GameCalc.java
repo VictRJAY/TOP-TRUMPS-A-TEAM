@@ -1,24 +1,17 @@
 package commandline;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
 public class GameCalc extends Deck {
-	
-	// add 
-	//'THIS IS HOW MANY CARDS YOU HAVE LEFT'
-	// load cards from .txt file
-	// Your card info
-	// Round information (who won, what was the winning card)
-	// 
 
-	ArrayList<Integer> shuffledDeck = new ArrayList<Integer>(); 
+	ArrayList<Integer> shuffledDeck = new ArrayList<Integer>();
 	ArrayList<Integer> drawPile = new ArrayList<Integer>(); // where we store drawn cards
 	ArrayList<Integer> roundCards = new ArrayList<Integer>(); // cards played in a given round
 
-	ArrayList<Integer> playerDecks[]; // players decks are stored here syso('you have: ' + playerDecks[0] + ' cards left';
-	
+	ArrayList<Integer> playerDecks[]; // players decks are stored here syso('you have: ' + playerDecks[0] + ' cards
+										// left';
+
 	int numberOfPlayers; // needed for calculations
 	int roundCounter; // next two variables are needed for specs
 	int drawCounter;
@@ -28,9 +21,9 @@ public class GameCalc extends Deck {
 	boolean userEliminated = false; // needed so scanner doesnt run if user isn't in game
 	boolean draw = false; // needed to not run AssignCard methods in OneRound() (currently line 38)
 
-	
 	int[][] playerRoundWins = new int[5][2]; // Here we store original player ID's and how many rounds they've won
-	ArrayList<Integer> currentPlayerPositions = new ArrayList<Integer>(); // here we store the positions of the players left in the game
+	ArrayList<Integer> currentPlayerPositions = new ArrayList<Integer>(); // here we store the positions of the players
+																			// left in the game
 
 	// ArrayList<Integer> currentPlayerPositions = new ArrayList<>();
 
@@ -38,7 +31,7 @@ public class GameCalc extends Deck {
 
 	public void StartOfGame() { // this runs once at the start of every game
 		getNumberOfPlayers();
-		DeckCards();
+		FileReader();
 		ShuffleDeck();
 		DistributePlayerDecks(numberOfPlayers, shuffledDeck);
 		randomizeStartingPosition();
@@ -47,27 +40,28 @@ public class GameCalc extends Deck {
 
 	public void OneRound() { // this runs every round until all but one players are eliminated
 		draw = false;
-		
+
 		int choice = ChooseAttributeForAIPlayerRound(currentPlayerPosition);
 		takeTopCards();
-		int winner = Compare(choice, roundCards,cards);
+		int winner = Compare(choice, roundCards, classDeckArray);
+		// prompt user to see winner of round
 		
-		if(draw == false) {
-		AwardAllCards(winner, roundCards);
-		checkLoser(playerDecks);
-		}else {
+		wouldYouLikeToContinue(); // This method breaks up every round so the game is actually usable
+
+		if (draw == false) {
+			AwardAllCards(winner, roundCards);
+			checkLoser(playerDecks);
+		} else {
 			System.out.println("THIS ROUND WAS A DRAW"); // testing
 		}
-		
-	
-		
-				System.out.println("ROUND: " + roundCounter); // everything here is just testing
-				
-				for(int i = 0; i<playerRoundWins.length;i++) {
-					System.out.println("Player: " + playerRoundWins[i][0]);
-				System.out.println("Wins: " + playerRoundWins[i][1]);
-				}
-		
+
+		System.out.println("ROUND: " + roundCounter); // everything here is just testing
+
+		for (int i = 0; i < playerRoundWins.length; i++) {
+			System.out.println("Player: " + playerRoundWins[i][0]);
+			System.out.println("Wins: " + playerRoundWins[i][1]);
+		}
+
 	}
 
 	public void getNumberOfPlayers() { // asks for numbers of AI players and then sets numberOfPlayers variable
@@ -81,6 +75,15 @@ public class GameCalc extends Deck {
 				numberOfPlayers = number + 1;
 				break;
 			}
+		}
+	}
+	public void wouldYouLikeToContinue() {
+		System.out.println("Enter '1' to see the winner of the round");
+		String goon = s.nextLine();
+		while (!goon.equals("1")) {
+			System.out.println("Please enter 1 to continue");
+			goon = s.nextLine();
+
 		}
 	}
 
@@ -127,7 +130,7 @@ public class GameCalc extends Deck {
 		// shuffle
 		ArrayList<Integer> cardPosition = new ArrayList<Integer>();
 
-		for (int i = 0; i < 50; i++) {
+		for (int i = 0; i < 40; i++) {
 			cardPosition.add(i + 1);
 		}
 		Collections.shuffle(cardPosition);
@@ -249,7 +252,7 @@ public class GameCalc extends Deck {
 		drawPile.addAll(round);
 		drawCounter++;
 		checkLoser(playerDecks);
-		
+
 		// AFTER A DRAW THE SAME PLAYER SELECTS AN ATTRIBUTE AGAIN, CODE THIS HERE
 	}
 
@@ -296,16 +299,17 @@ public class GameCalc extends Deck {
 
 	public void checkLoser(ArrayList<Integer>[] playerDecks) { // to be run after every round
 		for (int i = 0; i < playerDecks.length; i++) {
-			 if (playerDecks[i].isEmpty()) {
+			if (playerDecks[i].isEmpty()) {
 				playerEliminated(i);
-				if(i == 0) {
+				if (i == 0) {
 					userEliminated = true;
 				}
 			}
-			 if (playerDecks.length == 1) {
-					playerWins = true;
-					// playerDecks[0] (compare current player positons) compare to playerRoundWins(positions), the corresponding playerID is the winner
-				}
+			if (playerDecks.length == 1) {
+				playerWins = true;
+				// playerDecks[0] (compare current player positons) compare to
+				// playerRoundWins(positions), the corresponding playerID is the winner
+			}
 		}
 	}
 
@@ -317,11 +321,12 @@ public class GameCalc extends Deck {
 
 	}
 
-	public int ChooseAttributeForAIPlayerRound(int currentPlayerPosition) { // determines whether an AI player or a user is playing
+	public int ChooseAttributeForAIPlayerRound(int currentPlayerPosition) { // determines whether an AI player or a user
+																			// is playing
 
 		int choice = -1;
 		if (currentPlayerPosition == 0 && !userEliminated) {
-			ShowCardInformation(cards, playerDecks[0].get(0)); // shows top card of users deck
+			ShowCardInformation(classDeckArray, playerDecks[0].get(0)); // shows top card of users deck
 			choice = ChooseAttribute();
 		} else {
 			choice = 1;
