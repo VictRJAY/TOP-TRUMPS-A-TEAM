@@ -40,9 +40,15 @@ public class GameCalc extends Deck {
 		DistributePlayerDecks(numberOfPlayers, shuffledDeck);
 		randomizeStartingPosition();
 		PlayerID(numberOfPlayers);
+		
 
+		FileWriter("This is the original loaded deck:\n\n ");
 		Writing2D(classDeckArray);
+		FileWriter("This is the shuffled deck:\n\n ");
+
 		WriteCardInformation(shuffledDeck);
+		FileWriter("These are the player decks:\n\n ");
+
 		WriteCardIDs(playerDecks);
 	}
 
@@ -63,9 +69,12 @@ public class GameCalc extends Deck {
 			AwardAllCards(winner, roundCards); // change 1 to winner
 		} else {
 			System.out.println("THIS ROUND WAS A DRAW: " + roundCounter); // testing
-			
+			FileWriter("This is the drawPile:\n\n ");
+
 			WriteCardInformation(drawPile);
 		}
+		FileWriter("These are the contents of players' decks after a round:\n\n ");
+
 		WriteCardIDs(playerDecks);
 		checkLoser(playerDecks);
 		while (playerEliminated) { // this only runs if there are more than one player eliminated in one round
@@ -249,6 +258,8 @@ public class GameCalc extends Deck {
 			draw = true;
 		}
 //		return maxNumber;
+		FileWriter("These are the cards played this round:\n\n ");
+
 		WriteCardInformation(roundCards);
 		return winningCardNumber;
 	}
