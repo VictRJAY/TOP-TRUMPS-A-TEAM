@@ -8,7 +8,7 @@ public class testing {
 		
 	// The below method is passed a string which it then writes to a file called TextLog.txt
 
-	public static void FileWriter(String content) {
+	public void FileWriter(String content) {
 		File f = new File("TestLog.txt");
 		if (!f.exists()) {
 			try {
@@ -69,7 +69,7 @@ public class testing {
 	
 	// This method takes a String[][] and reformats it to a string that can be written to the testlog
 
-	public static void Writing2D(String[][] string2d) {
+	public void Writing2D(String[][] string2d) {
 		String temp = "";
 		for (int i = 0; i < string2d.length; i++) {
 			for (int j = 0; j < string2d[i].length; j++) {
