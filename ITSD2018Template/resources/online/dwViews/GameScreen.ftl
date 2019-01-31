@@ -20,12 +20,31 @@
 
 	</head>
 
-    <body onload="initalize()"> <!-- Call the initalize method when the page loads -->
+    <body onload="initalize()" style="background-image: linear-gradient(brown, white);"> <!-- Call the initalize method when the page loads -->
     	
-    	<div class="container">
-
-			<!-- Add your HTML Here -->
-		
+    	<div class="container-fluid">
+	    	<div class="row m-2">
+				<div class="col-sm p-2" style="background: black; color: white; text-align: center;">
+					Now Playing Top Trump
+				</div>
+	    	</div>
+	    	
+	    	<div class="row m-2">
+				<div class="col-sm p-2" style="background: brown; color: white; font-weight: bold;">
+					Round 1: Player you won this round
+				</div>
+	    	</div>
+	    	
+	    	<div class="row m-1 cards-display">
+	    	
+		    	<div class="col-sm-2 next-round">
+	    			<button type="button" onclick="NextRound(); return false;" class="btn btn-success">Next Round</button>
+		    	</div>
+		    	
+		    	
+		    	
+	    	</div>
+	    	
 		</div>
 		
 		<script type="text/javascript">
@@ -38,8 +57,8 @@
 				// --------------------------------------------------------------------------
 				
 				// For example, lets call our sample methods
-				helloJSONList();
-				helloWord("Student");
+				//helloJSONList();
+				//helloWord("Student");
 				
 			}
 			
@@ -47,6 +66,48 @@
 			// Add your other Javascript methods Here
 			// -----------------------------------------
 		
+			function GoHome() {
+						
+						window.location = "http://localhost:7777/toptrumps/";
+				
+			}
+			
+			function NextRound(){
+				loadCards();
+				fetchCategory();
+			
+			
+			}
+			
+			function loadCards(){
+			var cards = "<div class='col-sm-2'><div class='card' style='width: 12rem; height: 10rem;'><img class='card-img-top' src='...' alt='Card image cap'><div class='card-body'><h5 class='card-title'>Card title</h5><p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p></div></div></div>" 
+				for(var i=0;i<5;i++){
+					$('.cards-display').html($('.cards-display').html()+cards);
+				}
+			
+			}
+			
+			function fetchCategory() {
+			
+				// First create a CORS request, this is the message we are going to send (a get request in this case)
+				var xhr = createCORSRequest('GET', "http://localhost:7777/toptrumps/fetchCategory"); // Request type and URL+parameters
+				
+				// Message is not sent yet, but we can check that the browser supports CORS
+				if (!xhr) {
+  					alert("CORS not supported");
+				}
+
+				// CORS requests are Asynchronous, i.e. we do not wait for a response, instead we define an action
+				// to do when the response arrives 
+				xhr.onload = function(e) {
+ 					var responseText = xhr.response; // the text of the response
+					alert(responseText); // lets produce an alert
+				};
+				
+				// We have done everything we need to prepare the CORS request, so send it
+				xhr.send();		
+			}
+			
 			// This is a reusable method for creating a CORS request. Do not edit this.
 			function createCORSRequest(method, url) {
   				var xhr = new XMLHttpRequest();
@@ -71,7 +132,8 @@
   				 }
   				 return xhr;
 			}
-		
+			
+			
 		</script>
 		
 		<!-- Here are examples of how to call REST API Methods -->
@@ -120,8 +182,13 @@
 				// We have done everything we need to prepare the CORS request, so send it
 				xhr.send();		
 			}
-
+			
 		</script>
 		
 		</body>
+		<footer>
+			<div class="row m-5 fixed-bottom">
+	    		<button type="button" class="btn btn-primary" onclick="GoHome(); return false;">Back</button>
+	    	</div>
+		</footer>
 </html>

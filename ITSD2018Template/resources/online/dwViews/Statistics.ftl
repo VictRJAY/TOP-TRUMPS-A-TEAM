@@ -20,11 +20,39 @@
 
 	</head>
 
-    <body onload="initalize()"> <!-- Call the initalize method when the page loads -->
+    <body onload="initalize()" style="background-image: linear-gradient(brown, white);"> <!-- Call the initalize method when the page loads -->
     	
     	<div class="container">
 
 			<!-- Add your HTML Here -->
+			<div class="row mt-5">
+				<table class="table table-bordered" style="background: grey; color: white;">
+				  <thead>
+				    <tr style="background: black;">
+				      <th scope="col">New Game</th>
+				      <th scope="col">No</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr>
+				      <td>Number of games</td>
+				      <td>0</td>
+				    </tr>
+				    <tr>
+				      <td>Number of AI wins</td>
+				      <td>0</td>
+				    </tr>
+				    <tr>
+				      <td>Average draws per game</td>
+				      <td>0</td>
+				    </tr>				    
+				    <tr>
+				      <td>Longest Game</td>
+				      <td>0</td>
+				    </tr>
+				  </tbody>
+				</table>
+			</div>
 		
 		</div>
 		
@@ -38,14 +66,20 @@
 				// --------------------------------------------------------------------------
 				
 				// For example, lets call our sample methods
-				helloJSONList();
-				helloWord("Student");
+				//helloJSONList();
+				//helloWord("Student");
 				
 			}
-			
+
 			// -----------------------------------------
 			// Add your other Javascript methods Here
 			// -----------------------------------------
+			function GoHome() {
+						
+				window.location = "http://localhost:7777/toptrumps/";
+				
+			}
+		
 		
 			// This is a reusable method for creating a CORS request. Do not edit this.
 			function createCORSRequest(method, url) {
@@ -124,4 +158,9 @@
 		</script>
 		
 		</body>
+		<footer>
+			<div class="row m-5 fixed-bottom">
+	    		<button type="button" class="btn btn-primary" onclick="GoHome(); return false;">Back</button>
+	    	</div>
+		</footer>
 </html>

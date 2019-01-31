@@ -47,12 +47,12 @@
 			
 			function startGame(){
 			
-				 window.location = window.location + '/game';
+				 window.location =  'http://localhost:7777/toptrumps/game';
 			}
 			
 			function getStats(){
 			
-				 window.location = window.location + '/stats';
+				 window.location =  'http://localhost:7777/toptrumps/stats';
 			}
 			
 			
