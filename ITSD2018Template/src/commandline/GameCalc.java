@@ -270,6 +270,9 @@ public class GameCalc extends Deck {
 
 			roundCards.addAll(drawPile);
 			drawPile.clear();
+			FileWriter("This is the drawPile:\n\n ");
+
+			WriteCardInformation(drawPile);
 		}
 		
 
