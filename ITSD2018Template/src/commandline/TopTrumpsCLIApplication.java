@@ -30,6 +30,7 @@ public class TopTrumpsCLIApplication {
 			}
 			
 			System.out.println("GAME IS OVER");
+			System.out.println("The winner of the game was player: " + c.currentPlayerPositions.get(0));
 			
 			userWantsToQuit=true; // use this when the user wants to exit the game
 			
