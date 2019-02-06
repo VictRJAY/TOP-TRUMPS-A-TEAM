@@ -17,7 +17,7 @@ public class TopTrumpsCLIApplication {
 		
 		// State
 		boolean userWantsToQuit = false; // flag to check whether the user wants to quit the application
-		
+		//
 		// Loop until the user wants to exit the game
 		while (!userWantsToQuit) {
 

@@ -59,7 +59,7 @@ public class GameCalc extends Deck {
 		int winner = Compare(choice, roundCards, classDeckArray);
 
 		// prompt user to see winner of round
-
+//
 		wouldYouLikeToContinue();
 		// This method breaks up every round so the game is
 		// actually usable
