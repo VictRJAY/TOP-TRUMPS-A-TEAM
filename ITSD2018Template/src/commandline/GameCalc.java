@@ -25,10 +25,13 @@ public class GameCalc extends Deck {
 	boolean userEliminated = false; // needed so scanner doesnt run if user isn't in game
 	boolean playerEliminated = false;
 	boolean draw = false; // needed to not run AssignCard methods in OneRound() (currently line 38)
+	boolean testLog = false;
+	boolean startOfGame = true;
 
 	int[][] playerRoundWins = new int[5][2]; // Here we store original player ID's and how many rounds they've won
 	ArrayList<Integer> currentPlayerPositions = new ArrayList<Integer>(); // here we store the positions of the players
 																			// left in the game
+	// use above method to determine player pos for filewriter and syso
 
 	Scanner s = new Scanner(System.in);
 
@@ -40,22 +43,27 @@ public class GameCalc extends Deck {
 		randomizeStartingPosition(); // add who goes first as a syso
 		PlayerID(numberOfPlayers);
 
-//		FileWriter("This is the original loaded deck:\n\n ");
-//		Writing2D(classDeckArray);
-//		FileWriter("This is the shuffled deck:\n\n ");
+		FileWriter("This is the original loaded deck:\n\n ");
+		Writing2D(classDeckArray);
 
-//		WriteCardInformation(shuffledDeck);
-//		FileWriter("These are the player decks:\n\n ");
-//
-//		WriteCardIDs(playerDecks);
+		FileWriter("This is the shuffled deck:\n\n ");
+		WriteCardInformation(shuffledDeck);
+
+		FileWriter("These are the player decks:\n\n ");
+		WriteCardIDs(playerDecks);
 	}
 
 	public void OneRound() { // this runs every round until all but one players are eliminated
 		draw = false;
 		beginningOfRound();
 
-		int choice = ChooseAttributeForAIPlayerRound(currentPlayerPosition);
+		int choice = ChooseAttribute(currentPlayerPosition);
 		takeTopCards();
+		
+		FileWriter("These are the cards played this round:\n\n ");
+		WriteCardInformation(roundCards);
+		WriteCorrespondingAttributes(choice, roundCards);
+		
 		int winner = Compare(choice, roundCards, classDeckArray);
 
 		// prompt user to see winner of round
@@ -70,13 +78,14 @@ public class GameCalc extends Deck {
 		} else {
 			System.out.println("THIS ROUND WAS A DRAW: " + roundCounter); // testing
 			System.out.println("There are now: " + drawPile.size() + " cards in the common pile");
-//			FileWriter("This is the drawPile:\n\n ");
-//
-//			WriteCardInformation(drawPile);
+
+			FileWriter("There are now: " + drawPile.size() + " cards in the common pile");
+			FileWriter("This is the drawPile:\n\n ");
+			WriteCardInformation(drawPile);
 		}
-//		FileWriter("These are the contents of players' decks after a round:\n\n ");
-//
-//		WriteCardIDs(playerDecks);
+		FileWriter("These are the contents of players' decks after the round:\n\n ");
+		WriteCardIDs(playerDecks);
+
 		checkLoser(playerDecks);
 		while (playerEliminated) { // this only runs if there are more than one player eliminated in one round
 			checkLoser(playerDecks);
@@ -93,83 +102,19 @@ public class GameCalc extends Deck {
 
 	public void beginningOfRound() {
 		System.out.println("The current round is: " + roundCounter);
+		FileWriter("ROUND: " + roundCounter + "\r\n");
 
 		if (!userEliminated) {
 			System.out.println("You have: " + playerDecks[0].size() + " cards left.");
 		}
 	}
 
-	public void endOfRound() {
+	public void endOfRound() { // do we need this?
 		if (draw = true) {
 			System.out.println("This round was a draw");
 		} else {
 
 		}
-	}
-
-	public void getNumberOfPlayers() { // asks for numbers of AI players and then sets numberOfPlayers variable
-
-		int number;
-		while (true) {
-			System.out.println("Enter numbers of AI Players:");
-			number = s.nextInt();
-			s.nextLine();
-			if (number >= 1 && number <= 4) {
-				numberOfPlayers = number + 1;
-				break;
-			}
-		}
-	}
-
-	public void wouldYouLikeToContinue() {
-		System.out.println("Enter '1' to see the winner of the round");
-		String goon = s.nextLine();
-		while (!goon.equals("1")) {
-			System.out.println("Please enter 1 to continue");
-			goon = s.nextLine();
-
-		}
-	}
-
-	public int ChooseAttribute() { // chooses an attribute :)
-
-		int number;
-		String showCardInfo = ShowCardInformation(classDeckArray, playerDecks[0].get(0)); // shows top card of users
-																							// deck
-		System.out.println(showCardInfo);
-
-		while (true) {
-			System.out.println("Choose an attribute(1-5):");
-			number = s.nextInt();
-			s.nextLine();
-			if (number >= 1 && number <= 5) {
-				break;
-			}
-		}
-		return number;
-	}
-
-	public ArrayList<String> ListOfPlayers(int numberOfPlayers) { // makes a list of players and sets the inputted
-																	// number of AI
-
-		ArrayList<String> playerList = new ArrayList<String>();
-		playerList.add("Player");
-		for (int i = 1; i < numberOfPlayers; i++) {
-			String AIPlayer = "AIPlayer" + (i);
-			playerList.add(AIPlayer);
-		}
-		return playerList;
-	}
-
-	public ArrayList<Integer> PlayerID(int numberOfPlayers) { // makes player ID's,
-		// number of AI
-
-		for (int i = 0; i < numberOfPlayers; i++) {
-			currentPlayerPositions.add(i); // maybe + 1 so it's 1-5 instead of 0-4?
-			playerRoundWins[i][0] = i;
-		}
-
-		return currentPlayerPositions;
 	}
 
 	public void ShuffleDeck() { // shuffles deck positions
@@ -192,7 +137,7 @@ public class GameCalc extends Deck {
 		String information = "";
 
 		for (int j = 1; j < cards.length; j++) {
-			if (cardID == Integer.valueOf(cards[j][0])) {
+			if (cardID == Integer.valueOf(cards[j][0])) { // CHANGE ATTRIBUTE 1/2/3 etc to their actual names
 				information = "Card Name: " + cards[j][1] + "\nAttribute 1: " + cards[j][2] + "\nAttribute 2: "
 						+ cards[j][3] + "\nAttribute 3: " + cards[j][4] + "\nAttribute 4: " + cards[j][5]
 						+ "\nAttribute 5: " + cards[j][6];
@@ -275,16 +220,17 @@ public class GameCalc extends Deck {
 			IfDraw(roundCards); // adds cards to drawPile
 			draw = true;
 		}
-//		return maxNumber;
-//		FileWriter("These are the cards played this round:\n\n ");
 
-//		WriteCardInformation(roundCards);
 		return winningCardNumber;
 	}
 
 	public void AwardAllCards(int winningNumber, ArrayList<Integer> round) { // checks for a draw and assigns cards to
 																				// winner
-		System.out.println("The winner of the round was player: " + currentPlayerPositions.get(winningNumber));
+		System.out.println("The winner of the round was player : " + currentPlayerPositions.get(winningNumber)); // change
+																													// this
+																													// to
+																													// playerList
+																													// thing
 		System.out.println("The winning card was: \n");
 		String winningCard = ShowCardInformation(classDeckArray, round.get(winningNumber)); // make this syso method?
 		System.out.println(winningCard);
@@ -293,9 +239,9 @@ public class GameCalc extends Deck {
 
 			roundCards.addAll(drawPile);
 			drawPile.clear();
-			FileWriter("This is the drawPile:\n\n ");
 
-			WriteCardInformation(drawPile);
+			FileWriter("There are now: " + drawPile.size() + " cards in the common pile");
+
 		}
 
 		playerDecks[winningNumber].addAll(round);
@@ -330,7 +276,7 @@ public class GameCalc extends Deck {
 		playerEliminated = true;
 		newPlayerDecks(playerDecks, playerNumber);
 		currentPlayerPositions.remove(playerNumber);
-		System.out.println("TESTING: PLAYER WAS ELIMINATED: " + playerNumber);
+		System.out.println("TESTING: PLAYER WAS ELIMINATED: " + playerNumber); // playerlist thing here too
 		// delete playerDecks[playerNumber] from playerDecks[]
 		// delete player from playerList since we dont need them if they lose
 	}
@@ -362,6 +308,7 @@ public class GameCalc extends Deck {
 
 		if (playerDecks.length == 1) {
 			playerWins = true;
+			WriteWinnerToLog();
 		}
 
 		for (int i = 0; i < playerDecks.length; i++) {
@@ -385,35 +332,113 @@ public class GameCalc extends Deck {
 
 	}
 
-	public int ChooseAttributeForAIPlayerRound(int currentPlayerPosition) { // determines whether an AI player or a user
-																			// is playing
+	public ArrayList<String> ListOfPlayers(int numberOfPlayers) { // makes a list of players and sets the inputted
+		// number of AI
+
+		ArrayList<String> playerList = new ArrayList<String>();
+		playerList.add("Player");
+		for (int i = 1; i < numberOfPlayers; i++) {
+			String AIPlayer = "AIPlayer" + (i);
+			playerList.add(AIPlayer);
+		}
+		return playerList;
+	}
+
+	public ArrayList<Integer> PlayerID(int numberOfPlayers) { // makes player ID's,
+// number of AI
+
+		for (int i = 0; i < numberOfPlayers; i++) {
+			currentPlayerPositions.add(i); // maybe + 1 so it's 1-5 instead of 0-4?
+			playerRoundWins[i][0] = i;
+		}
+
+		return currentPlayerPositions;
+	}
+
+	public int ChooseAttribute(int currentPlayerPosition) { // determines whether an AI player or a user
+															// is playing
 
 		int choice = -1;
 		if (currentPlayerPosition == 0 && !userEliminated) {
 			// choice = (int) (Math.random() * 5 + 1);
-			choice = ChooseAttribute();
+			choice = PlayerChooseAttribute();
+			System.out.println("User selected attribute: " + classDeckArray[0][choice + 1]);
+			FileWriter("User selected attribute: " + classDeckArray[0][choice + 1]);
 		} else {
 			choice = (int) (Math.random() * 5 + 1);
+			System.out.println(
+					"AI-Player" + currentPlayerPosition + " selected attribute: " + classDeckArray[0][choice + 1]);
+			FileWriter("AI-Player" + currentPlayerPosition + " selected attribute: " + classDeckArray[0][choice + 1]);
 		}
 		return choice;
 	}
 
+	public void getNumberOfPlayers() { // asks for numbers of AI players and then sets numberOfPlayers variable
+
+		int number;
+		while (true) {
+			System.out.println("Enter numbers of AI Players:");
+			number = s.nextInt();
+			s.nextLine();
+			if (number >= 1 && number <= 4) {
+				numberOfPlayers = number + 1;
+				break;
+			}
+		}
+	}
+
+	public void wouldYouLikeToContinue() {
+		System.out.println("Enter '1' to see the winner of the round");
+		String goon = s.nextLine();
+		while (!goon.equals("1")) {
+			System.out.println("Please enter 1 to continue");
+			goon = s.nextLine();
+
+		}
+	}
+
+	public int PlayerChooseAttribute() { // chooses an attribute :)
+
+		int number;
+		String showCardInfo = ShowCardInformation(classDeckArray, playerDecks[0].get(0)); // shows top card of users
+																							// deck
+		System.out.println(showCardInfo);
+
+		while (true) {
+			System.out.println("Choose an attribute(1-5):");
+			number = s.nextInt();
+			s.nextLine();
+			if (number >= 1 && number <= 5) {
+				break;
+			}
+		}
+		return number;
+	}
+
 	public void FileWriter(String content) {
-		File f = new File("TestLog.txt");
-		if (!f.exists()) {
+		if (testLog) {
+			File f = new File("TestLog.txt");
+			if (!f.exists()) {
+				try {
+					f.createNewFile();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
 			try {
-				f.createNewFile();
+				if (startOfGame) { // this boolean overwrites an existing TestLog.txt if it is the start of the
+									// game
+					FileWriter fw = new FileWriter("TestLog.txt", false);
+					startOfGame = false;
+				}
+				FileWriter fw = new FileWriter("TestLog.txt", true); // right now it always appends if the file exists
+				fw.write(content + "\r\n");
+				fw.close();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
-		try {
-			FileWriter fw = new FileWriter("TestLog.txt", true);
-			fw.write(content + "\r\n");
-			fw.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+
 	}
 
 	/*
@@ -424,13 +449,13 @@ public class GameCalc extends Deck {
 	 * roundCards
 	 */
 	public void WriteCardInformation(ArrayList<Integer> al) {
-		String temp = "ROUND: " + roundCounter + "\r\n";
-		String s = "------------------------";
+		String temp = "";
+		String s = "------------------------\r\n";
 		for (int i = 0; i < al.size(); i++) {
 			temp += ShowCardInformation(classDeckArray, al.get(i));
 			temp += "\r\n";
 		}
-		FileWriter(temp);
+		FileWriter(temp + s);
 	}
 
 	/*
@@ -442,12 +467,19 @@ public class GameCalc extends Deck {
 	 * after cards are added/removed
 	 */
 
-	public void WriteCardIDs(ArrayList<Integer>[] al) {
+	public void WriteCardIDs(ArrayList<Integer>[] al) { // INstead of a method that does this, write something that
+														// displays card name
 		String temp = "";
-		String s = "\r\n------------------------";
+		String s = "\r\n------------------------"; // consider changing string s,
 		for (int i = 0; i < al.length; i++) {
-			temp += "Player" + (i + 1);
-			temp += "\r\n";
+			if (currentPlayerPositions.get(i) == 0) { // distinguishes between the user and AI players for the
+														// FileWriter
+				temp += "\r\nUser:\r\n";
+			} else {
+				
+				temp += "\r\nAIPlayer:" + currentPlayerPositions.get(i) + "\r\n";
+
+			}
 			for (int j = 0; j < al[i].size(); j++) {
 				temp += "CardID: " + al[i].get(j);
 				temp += "\r\n";
@@ -460,7 +492,7 @@ public class GameCalc extends Deck {
 	// This method takes a String[][] and reformats it to a string that can be
 	// written to the testlog
 
-	public void Writing2D(String[][] string2d) {
+	public void Writing2D(String[][] string2d) { // to print the OG deck to testlog
 		String temp = "";
 		for (int i = 0; i < string2d.length; i++) {
 			for (int j = 0; j < string2d[i].length; j++) {
@@ -483,8 +515,26 @@ public class GameCalc extends Deck {
 	}
 
 	public void WriteWinnerToLog() {
-		String temp = ("The winner of the game was player: " + currentPlayerPositions.get(0));
+		String temp;
+		if (currentPlayerPositions.get(0) == 0) {
+			temp = ("The winner of the game was the user");
+		} else {
+			temp = ("The winner of the game was AIplayer: " + currentPlayerPositions.get(0)); // change this to
+
+		}
+		// playerlist thing
 		FileWriter(temp);
+	}
+
+	public void WriteCorrespondingAttributes(int choice, ArrayList<Integer> roundCards) {
+		String temp = "";
+		temp += "The chosen attribute is: " + classDeckArray[0][choice + 1] + "(" + choice + ")\r\n";
+		for (int i = 0; i < roundCards.size(); i++) {
+			temp += "Card: " + (i + 1) + " value is: " + classDeckArray[roundCards.get(i)][choice + 1];
+			temp += "\r\n";
+		}
+		FileWriter(temp);
+
 	}
 
 }
