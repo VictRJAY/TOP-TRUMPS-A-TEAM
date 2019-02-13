@@ -9,6 +9,8 @@ import java.util.Scanner;
 
 public class GameCalc extends Deck {
 
+	// SHOW WHAT CARD YOU HAVE EVERY ROUND
+
 	ArrayList<Integer> shuffledDeck = new ArrayList<Integer>();
 	ArrayList<Integer> drawPile = new ArrayList<Integer>(); // where we store drawn cards
 	ArrayList<Integer> roundCards = new ArrayList<Integer>(); // cards played in a given round
@@ -34,6 +36,7 @@ public class GameCalc extends Deck {
 	// use above method to determine player pos for filewriter and syso
 
 	Scanner s = new Scanner(System.in);
+	String divider = "-------------------------------\r\n";
 
 	public void StartOfGame() { // this runs once at the start of every game
 		getNumberOfPlayers();
@@ -43,14 +46,17 @@ public class GameCalc extends Deck {
 		randomizeStartingPosition(); // add who goes first as a syso
 		PlayerID(numberOfPlayers);
 
-		FileWriter("This is the original loaded deck:\n\n ");
-		Writing2D(classDeckArray);
+		if (testLog) {
+			FileWriter("This is the original loaded deck:\n\n ");
+			Writing2D(classDeckArray);
 
-		FileWriter("This is the shuffled deck:\n\n ");
-		WriteCardInformation(shuffledDeck);
+			FileWriter("This is the shuffled deck:\n\n ");
+			WriteCardInformation(shuffledDeck);
 
-		FileWriter("These are the player decks:\n\n ");
-		WriteCardIDs(playerDecks);
+			FileWriter("These are the player decks:\n\n ");
+			WriteCardIDs(playerDecks);
+		}
+
 	}
 
 	public void OneRound() { // this runs every round until all but one players are eliminated
@@ -59,21 +65,23 @@ public class GameCalc extends Deck {
 
 		int choice = ChooseAttribute(currentPlayerPosition);
 		takeTopCards();
-		
-		FileWriter("These are the cards played this round:\n\n ");
-		WriteCardInformation(roundCards);
-		WriteCorrespondingAttributes(choice, roundCards);
-		
+
+		if (testLog) {
+			FileWriter("These are the cards played this round:\n\n ");
+			WriteCardInformation(roundCards);
+			WriteCorrespondingAttributes(choice, roundCards);
+		}
+
 		int winner = Compare(choice, roundCards, classDeckArray);
 
 		// prompt user to see winner of round
 //
-		wouldYouLikeToContinue();
+	//	wouldYouLikeToContinue();
 		// This method breaks up every round so the game is
 		// actually usable
 
 		if (draw == false) {
-			AwardAllCards(winner, roundCards); // change 1 to winner
+			AwardAllCards(winner, roundCards); 
 
 		} else {
 			System.out.println("THIS ROUND WAS A DRAW: " + roundCounter); // testing
@@ -90,22 +98,29 @@ public class GameCalc extends Deck {
 		while (playerEliminated) { // this only runs if there are more than one player eliminated in one round
 			checkLoser(playerDecks);
 		}
-
-//		System.out.println("ROUND: " + roundCounter); // everything here is just testing
-//
-//		for (int i = 0; i < playerRoundWins.length; i++) {
-//			System.out.println("Player: " + playerRoundWins[i][0]);
-//			System.out.println("Wins: " + playerRoundWins[i][1]);
-//		}
+		roundCounter++; // the method increments the roundCounter at the very end of the round
 
 	}
 
 	public void beginningOfRound() {
 		System.out.println("The current round is: " + roundCounter);
-		FileWriter("ROUND: " + roundCounter + "\r\n");
 
-		if (!userEliminated) {
+		if (!userEliminated && currentPlayerPositions.get(currentPlayerPosition) == 0) { // displays who's turn it is
+			System.out.println("It is the User's turn to select an attribute.");
+		} else {
+			System.out.println("It is AI-Player" + currentPlayerPositions.get(currentPlayerPosition)
+					+ "'s turn to select an attribute.");
+		}
+
+		// add who's turn it is
+
+		if (!userEliminated) { // displays amount of cards and which card the user has
 			System.out.println("You have: " + playerDecks[0].size() + " cards left.");
+			System.out.println("\r\nYour card is: \n" + ShowCardInformation(classDeckArray, playerDecks[0].get(0)));
+
+		}
+		if (testLog) {
+			FileWriter("ROUND: " + roundCounter + "\r\n");
 		}
 	}
 
@@ -115,6 +130,7 @@ public class GameCalc extends Deck {
 		} else {
 
 		}
+
 	}
 
 	public void ShuffleDeck() { // shuffles deck positions
@@ -137,10 +153,10 @@ public class GameCalc extends Deck {
 		String information = "";
 
 		for (int j = 1; j < cards.length; j++) {
-			if (cardID == Integer.valueOf(cards[j][0])) { // CHANGE ATTRIBUTE 1/2/3 etc to their actual names
-				information = "Card Name: " + cards[j][1] + "\nAttribute 1: " + cards[j][2] + "\nAttribute 2: "
-						+ cards[j][3] + "\nAttribute 3: " + cards[j][4] + "\nAttribute 4: " + cards[j][5]
-						+ "\nAttribute 5: " + cards[j][6];
+			if (cardID == Integer.valueOf(cards[j][0])) {
+				information = cards[0][1] + ": " + cards[j][1] + "\n(1)" + cards[0][2] + ": " + cards[j][2] + "\n(2)"
+						+ cards[0][3] + ": " + cards[j][3] + "\n(3)" + cards[0][4] + ": " + cards[j][4] + "\n(4)"
+						+ cards[0][5] + ": " + cards[j][5] + "\n(5) " + cards[0][6] + ": " + cards[j][6];
 			}
 		}
 
@@ -177,8 +193,7 @@ public class GameCalc extends Deck {
 			tempRoundCards.add(playerDecks[i].get(0));
 			playerDecks[i].remove(0);
 		}
-		roundCounter++; // the method also increments the roundCounter since it's called at the
-						// beginning of a round
+
 		roundCards = tempRoundCards;
 		return roundCards;
 	}
@@ -226,11 +241,15 @@ public class GameCalc extends Deck {
 
 	public void AwardAllCards(int winningNumber, ArrayList<Integer> round) { // checks for a draw and assigns cards to
 																				// winner
-		System.out.println("The winner of the round was player : " + currentPlayerPositions.get(winningNumber)); // change
-																													// this
-																													// to
-																													// playerList
-																													// thing
+		if (!userEliminated && winningNumber == 0) {
+			System.out.println("The winner of the round was the user.");
+
+		} else {
+			System.out.println("The winner of the round was AI-player" + currentPlayerPositions.get(winningNumber));
+		}
+		// to
+		// playerList
+		// thing
 		System.out.println("The winning card was: \n");
 		String winningCard = ShowCardInformation(classDeckArray, round.get(winningNumber)); // make this syso method?
 		System.out.println(winningCard);
@@ -400,9 +419,9 @@ public class GameCalc extends Deck {
 	public int PlayerChooseAttribute() { // chooses an attribute :)
 
 		int number;
-		String showCardInfo = ShowCardInformation(classDeckArray, playerDecks[0].get(0)); // shows top card of users
-																							// deck
-		System.out.println(showCardInfo);
+//		String showCardInfo = ShowCardInformation(classDeckArray, playerDecks[0].get(0)); // shows top card of users
+//																							// deck
+//		System.out.println(showCardInfo);
 
 		while (true) {
 			System.out.println("Choose an attribute(1-5):");
@@ -416,27 +435,26 @@ public class GameCalc extends Deck {
 	}
 
 	public void FileWriter(String content) {
-		if (testLog) {
-			File f = new File("TestLog.txt");
-			if (!f.exists()) {
-				try {
-					f.createNewFile();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
+
+		File f = new File("TestLog.txt");
+		if (!f.exists()) {
 			try {
-				if (startOfGame) { // this boolean overwrites an existing TestLog.txt if it is the start of the
-									// game
-					FileWriter fw = new FileWriter("TestLog.txt", false);
-					startOfGame = false;
-				}
-				FileWriter fw = new FileWriter("TestLog.txt", true); // right now it always appends if the file exists
-				fw.write(content + "\r\n");
-				fw.close();
+				f.createNewFile();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+		}
+		try {
+			if (startOfGame) { // this boolean overwrites an existing TestLog.txt if it is the start of the
+								// game
+				FileWriter fw = new FileWriter("TestLog.txt", false);
+				startOfGame = false;
+			}
+			FileWriter fw = new FileWriter("TestLog.txt", true); // right now it always appends if the file exists
+			fw.write(content + "\r\n");
+			fw.close();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 
 	}
@@ -450,12 +468,11 @@ public class GameCalc extends Deck {
 	 */
 	public void WriteCardInformation(ArrayList<Integer> al) {
 		String temp = "";
-		String s = "------------------------\r\n";
 		for (int i = 0; i < al.size(); i++) {
 			temp += ShowCardInformation(classDeckArray, al.get(i));
 			temp += "\r\n";
 		}
-		FileWriter(temp + s);
+		FileWriter(temp + divider);
 	}
 
 	/*
@@ -470,13 +487,12 @@ public class GameCalc extends Deck {
 	public void WriteCardIDs(ArrayList<Integer>[] al) { // INstead of a method that does this, write something that
 														// displays card name
 		String temp = "";
-		String s = "\r\n------------------------"; // consider changing string s,
 		for (int i = 0; i < al.length; i++) {
 			if (currentPlayerPositions.get(i) == 0) { // distinguishes between the user and AI players for the
 														// FileWriter
 				temp += "\r\nUser:\r\n";
 			} else {
-				
+
 				temp += "\r\nAIPlayer:" + currentPlayerPositions.get(i) + "\r\n";
 
 			}
@@ -486,7 +502,7 @@ public class GameCalc extends Deck {
 
 			}
 		}
-		FileWriter(temp + s);
+		FileWriter(temp + divider);
 	}
 
 	// This method takes a String[][] and reformats it to a string that can be
@@ -501,7 +517,7 @@ public class GameCalc extends Deck {
 			}
 			temp += "\r\n";
 		}
-		FileWriter(temp);
+		FileWriter(temp + divider);
 	}
 
 	public void WriteAllRoundCards(ArrayList<Integer> roundCards) {
@@ -511,19 +527,19 @@ public class GameCalc extends Deck {
 			temp += ShowCardInformation(classDeckArray, roundCards.get(i));
 			temp += "\r\n";
 		}
-		FileWriter(temp);
+		FileWriter(temp + divider);
 	}
 
 	public void WriteWinnerToLog() {
 		String temp;
-		if (currentPlayerPositions.get(0) == 0) {
-			temp = ("The winner of the game was the user");
+		if (!userEliminated) {
+			temp = ("The winner of the game was the user.");
 		} else {
 			temp = ("The winner of the game was AIplayer: " + currentPlayerPositions.get(0)); // change this to
 
 		}
 		// playerlist thing
-		FileWriter(temp);
+		FileWriter(temp + divider);
 	}
 
 	public void WriteCorrespondingAttributes(int choice, ArrayList<Integer> roundCards) {
@@ -533,7 +549,7 @@ public class GameCalc extends Deck {
 			temp += "Card: " + (i + 1) + " value is: " + classDeckArray[roundCards.get(i)][choice + 1];
 			temp += "\r\n";
 		}
-		FileWriter(temp);
+		FileWriter(temp + divider);
 
 	}
 
