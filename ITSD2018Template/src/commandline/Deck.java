@@ -1,28 +1,47 @@
 package commandline;
 
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+
 public class Deck {
 
-	static String[][] cards = new String[51][7]; // stores initial deck, never changes
+	static String[][] classDeckArray = new String[41][7];
 
-	public static String[][] DeckCards() { // Fills deck with data
+	// The below method takes takes a .txt file filled with deck information and
+	// stores it as a String[][] array
 
-		cards[0][0] = "Card No.";
-		cards[0][1] = "Card Name";
-		for (int i = 2; i < cards[0].length; i++) {
-			String name = "Card Attribute No." + (i - 1);
-			cards[0][i] = name;
+	public String[][] FileReader() {
+		File file = new File("StarCitizenDeck.txt"); // CHANGE DECK HERE
+		BufferedReader br;
+		String test = "";
+		String[] card = null;
+		ArrayList<String> deck = new ArrayList<String>();
+		String[][] deckArray = new String[41][7];
+
+		try {
+			br = new BufferedReader(new FileReader(file));
+			while ((test = br.readLine()) != null) {
+				card = test.split(" ");
+				for (int i = 0; i < card.length; i++) {
+					deck.add(card[i]);
+				}
+			}
+		} catch (IOException e) {
+		//	e.printStackTrace();
 		}
-		for (int i = 1; i < cards.length; i++) {
-			cards[i][0] = String.valueOf(i);
-			String name = "Card Name No." + i;
-			cards[i][1] = name;
-		}
-		for (int i = 1; i < cards.length; i++) {
-			for (int j = 2; j < cards[i].length; j++) {
-				cards[i][j] = String.valueOf((int) (Math.random() * 10 + 1));
+		for (int i = 0; i < deckArray.length; i++) {
+			deckArray[i][0] = String.valueOf(i);
+			for (int j = 1; j < deckArray[i].length; j++) {
+				deckArray[i][j] = deck.get(i * 6 + j - 1);
 			}
 		}
-		return cards;
+		deckArray[0][0] = "CardID";
+		classDeckArray = deckArray;
+		return deckArray;
 	}
 }
