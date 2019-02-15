@@ -1,21 +1,19 @@
 package commandline;
 
-
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class Deck {
 
-	static String[][] classDeckArray = new String[41][7];
+	protected static String[][] classDeckArray = new String[41][7];
 
 	// The below method takes takes a .txt file filled with deck information and
 	// stores it as a String[][] array
 
-	public String[][] FileReader() {
+	public static String[][] FileReader() {
 		File file = new File("StarCitizenDeck.txt"); // CHANGE DECK HERE
 		BufferedReader br;
 		String test = "";
@@ -32,7 +30,7 @@ public class Deck {
 				}
 			}
 		} catch (IOException e) {
-		//	e.printStackTrace();
+			// e.printStackTrace();
 		}
 		for (int i = 0; i < deckArray.length; i++) {
 			deckArray[i][0] = String.valueOf(i);
@@ -44,4 +42,5 @@ public class Deck {
 		classDeckArray = deckArray;
 		return deckArray;
 	}
+
 }

@@ -16,15 +16,15 @@ public class TopTrumpsCLIApplication {
 	 */
 	public static void main(String[] args) {
 
-		boolean writeGameLogsToFile = false; // Should we write game logs to file? SET THIS TO FALSE
+		boolean writeGameLogsToFile = true; // Should we write game logs to file? SET THIS TO FALSE
 		if (args[0].equalsIgnoreCase("true"))
 			writeGameLogsToFile = true; // Command line selection
 
 		// State
-		boolean userWantsToQuit = false; // flag to check whether the user wants to quit the application
+	//	boolean userWantsToQuit = false; // flag to check whether the user wants to quit the application
 		//
 		// Loop until the user wants to exit the game
-		while (!userWantsToQuit) {
+		while (!GameSettings.userWantsToQuit) {
 			GameCalc c = new GameCalc();
 
 			if (writeGameLogsToFile == true) {
@@ -35,6 +35,7 @@ public class TopTrumpsCLIApplication {
 
 			while (!c.playerWins) {
 				c.OneRound();
+				
 			}
 
 			System.out.println("GAME IS OVER");
@@ -50,7 +51,7 @@ public class TopTrumpsCLIApplication {
 //			} catch (SQLException e) {
 //				//e.printStackTrace();
 //			}
-			userWantsToQuit = true; // use this when the user wants to exit the game
+		//	userWantsToQuit = true; // use this when the user wants to exit the game
 
 		}
 
