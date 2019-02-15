@@ -1,6 +1,5 @@
 package online.dwResources;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +18,8 @@ import online.configuration.TopTrumpsJSONConfiguration;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
+
+import commandline.dbConnect;
 
 
 @Path("/toptrumps") // Resources specified here should be hosted at http://localhost:7777/toptrumps
@@ -150,7 +151,27 @@ public class TopTrumpsRESTAPI {
 
 		gameCalculator.OneRound();
 		String endstatement = gameCalculator.finish();
-		gameCalculator.roundCounter++;
+		
+		if(endstatement.contains("GAME OVER")) {
+			try {
+				dbConnect d = new dbConnect();
+				//d.connection();
+				String winnerString = "";
+				Player winner = gameCalculator.Players.get(0);
+				if(winner.getId() == 0) {
+					winnerString = "PLAYER";
+				}else {
+					winnerString = "AI";
+				}
+				d.dbValuesImport(String.valueOf(gameCalculator.drawCounter),winnerString,String.valueOf(gameCalculator.roundCounter));
+			} catch (Exception e) {
+				//e.printStackTrace();
+			}
+		}else {
+			
+			gameCalculator.roundCounter++;
+			
+		}
 		return endstatement;
 		
 	}

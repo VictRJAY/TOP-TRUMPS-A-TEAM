@@ -17,6 +17,7 @@ public class GameCalcO{
 	
 	public int numberOfPlayers = 0;
 	public int roundCounter = 1;
+	public int drawCounter = 0;
 																
 
 	public void StartOfGame(int playerNumbers) { // this runs once at the start of every game
@@ -66,6 +67,7 @@ public class GameCalcO{
 		}
 		if(winnerCards.size()>1) {
 			addToDrawPile();
+			drawCounter++;
 		}else {
 			addToWinnerDeck();
 		}
@@ -138,7 +140,7 @@ public class GameCalcO{
 			if(currentAttVal >= WinCardAttVal) {
 				winningCard = c;
 			}	
-		}
+		} 
 		
 		//in case more than one card won this round
 		ArrayList<Card> winnerCards = new ArrayList<Card>();
@@ -206,8 +208,6 @@ public class GameCalcO{
 	
 	public String finish() {
 		if(isGameOver()) {
-			
-			//store in database
 			
 			return "Round "+roundCounter+": "+getPlayer(activeID).getName()+" won this round. GAME OVER!!!";
 		}

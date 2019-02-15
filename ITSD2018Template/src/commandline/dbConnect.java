@@ -102,6 +102,7 @@ public class dbConnect {
 			System.out.println("Connection failed");
 		}
 	}
+	
 }
 //--------------------------------------SQL CREATE STATEMENTS-------------------------------------
 // CREATE TABLE GAME
