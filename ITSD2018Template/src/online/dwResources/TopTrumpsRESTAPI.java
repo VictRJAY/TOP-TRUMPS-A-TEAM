@@ -11,10 +11,16 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
+import online.Card;
+import online.GameCalcO;
+import online.Player;
 import online.configuration.TopTrumpsJSONConfiguration;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
+
+import commandline.dbConnect;
+
 
 @Path("/toptrumps") // Resources specified here should be hosted at http://localhost:7777/toptrumps
 @Produces(MediaType.APPLICATION_JSON) // This resource returns JSON content
@@ -34,6 +40,8 @@ public class TopTrumpsRESTAPI {
 	/** A Jackson Object writer. It allows us to turn Java objects
 	 * into JSON strings easily. */
 	ObjectWriter oWriter = new ObjectMapper().writerWithDefaultPrettyPrinter();
+	GameCalcO gameCalculator;
+	ArrayList<Player> playersRoundInfo;
 	
 	/**
 	 * Contructor method for the REST API. This is called first. It provides
@@ -45,6 +53,8 @@ public class TopTrumpsRESTAPI {
 		// ----------------------------------------------------
 		// Add relevant initalization here
 		// ----------------------------------------------------
+		
+		
 	}
 	
 	// ----------------------------------------------------
@@ -52,36 +62,118 @@ public class TopTrumpsRESTAPI {
 	// ----------------------------------------------------
 	
 	@GET
-	@Path("/helloJSONList")
+	@Path("/startGame")
+
+	public boolean startGame() throws IOException {
+		//returns if its the humans turn or not in boolean
+		gameCalculator = new GameCalcO();
+		gameCalculator.StartOfGame(5);
+		return true;
+	}
+	
+	@GET
+	@Path("/getRoundInfo")
+
+	public String getRoundInfo() throws IOException {
+		
+		return gameCalculator.beginningOfRoundInfo();
+		
+	}
+	
+	@GET
+	@Path("/fetchUserInfo")
+
+	public String fetchUserInfo() throws IOException {
+		
+		ArrayList<Card> topCards = new ArrayList<Card>();
+		topCards.add(gameCalculator.getPlayer(0).getCards().get(0));
+		
+		Player player = new Player(gameCalculator.getPlayer(0).getId(),gameCalculator.getPlayer(0).getName(),topCards);
+		
+		String listAsJSONString = oWriter.writeValueAsString(player);
+		
+		return listAsJSONString;
+	}
+	
+	@GET
+	@Path("/isTurn")
+
+	public boolean isTurn() throws IOException {
+		//returns if its the humans turn or not in boolean
+		return gameCalculator.isPlayerTurn();
+	}
+
+	
+	@GET
+	@Path("/categoryList")
+
+	public String categoryList() throws IOException {
+		//returns a json string of a list of strings of the categories
+		List<String> categories = Card.attributeHeaders;
+
+		String listAsJSONString = oWriter.writeValueAsString(categories);
+		
+		return listAsJSONString;
+	}
+	
+	@GET
+	@Path("/sendCategory")
+
+	public String sendCategory(@QueryParam("Category") String category) throws IOException {
+		//sends the category selected to game calc class to store
+		gameCalculator.roundChoice = 1+Integer.parseInt(category);
+		playersRoundInfo = gameCalculator.Players;
+		return gameCalculator.endOfRoundInfo();
+	}
+	
+	@GET
+	@Path("/playersInfo")
+
+	public String playersInfo() throws IOException {
+		String stage2Info ="";
+		if(!gameCalculator.isPlayerTurn()) {
+			stage2Info = sendCategory(String.valueOf((int) (Math.random() * 5)))+"<>";
+		}
+		String listAsJSONString = oWriter.writeValueAsString(playersRoundInfo);
+		
+		return stage2Info+listAsJSONString;
+	}
+
+	@GET
+	@Path("/completeTurn")
 	/**
 	 * Here is an example of a simple REST get request that returns a String.
 	 * We also illustrate here how we can convert Java objects to JSON strings.
 	 * @return - List of words as JSON
 	 * @throws IOException
 	 */
-	public String helloJSONList() throws IOException {
+	public String completeTurn() throws IOException {
+
+		gameCalculator.OneRound();
+		String endstatement = gameCalculator.finish();
 		
-		List<String> listOfWords = new ArrayList<String>();
-		listOfWords.add("Hello");
-		listOfWords.add("World!");
+		if(endstatement.contains("GAME OVER")) {
+			try {
+				dbConnect d = new dbConnect();
+				//d.connection();
+				String winnerString = "";
+				Player winner = gameCalculator.Players.get(0);
+				if(winner.getId() == 0) {
+					winnerString = "PLAYER";
+				}else {
+					winnerString = "AI";
+				}
+				d.dbValuesImport(String.valueOf(gameCalculator.drawCounter),winnerString,String.valueOf(gameCalculator.roundCounter));
+			} catch (Exception e) {
+				//e.printStackTrace();
+			}
+		}else {
+			
+			gameCalculator.roundCounter++;
+			
+		}
+		return endstatement;
 		
-		// We can turn arbatory Java objects directly into JSON strings using
-		// Jackson seralization, assuming that the Java objects are not too complex.
-		String listAsJSONString = oWriter.writeValueAsString(listOfWords);
-		
-		return listAsJSONString;
-	}
-	
-	@GET
-	@Path("/helloWord")
-	/**
-	 * Here is an example of how to read parameters provided in an HTML Get request.
-	 * @param Word - A word
-	 * @return - A String
-	 * @throws IOException
-	 */
-	public String helloWord(@QueryParam("Word") String Word) throws IOException {
-		return "Hello "+Word;
 	}
 	
 }
