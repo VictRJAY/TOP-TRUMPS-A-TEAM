@@ -19,16 +19,17 @@ public class TopTrumpsCLIApplication {
 
 	public static void main(String[] args) {
 
-		boolean writeGameLogsToFile = true; // Should we write game logs to file? SET THIS TO FALSE
+		boolean writeGameLogsToFile = false; // Should we write game logs to file? SET THIS TO FALSE
 		if (args[0].equalsIgnoreCase("true"))
 			writeGameLogsToFile = true; // Command line selection
 		if (writeGameLogsToFile == true) {
 			GameCalc.testLog = true;
 		}
 
-		// GAME MENU HERE
+		System.out.println("WELCOME!");
 
 		while (!GameSettings.userWantsToQuit) {
+			System.out.println("Type '9' at any point to quit the game.\n");
 			System.out.println("\nDo you want to see past results or play a game?");
 			System.out.println("\t1: Print Game Statistics");
 			System.out.println("\t2: Play game");
@@ -89,6 +90,10 @@ public class TopTrumpsCLIApplication {
 				// e.printStackTrace();
 			}
 
+		}
+		else if (selection == 9) {
+			System.out.println("You have quit the game, goodbye!");
+			System.exit(0);
 		}
 		s.nextLine();
 

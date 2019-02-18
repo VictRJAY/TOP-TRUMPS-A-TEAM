@@ -39,7 +39,7 @@ public class GameCalc {
 	FileWriting f = new FileWriting();
 
 	public void StartOfGame() { // this runs once at the start of every game
-		System.out.println("Welcome! Type '9' at any point to quit the game.");
+
 		numberOfPlayers = (g.getNumberOfAIPlayers() + 1);
 
 		Deck.FileReader();
@@ -221,8 +221,20 @@ public class GameCalc {
 		// winningNumber is the position in activePlayerPositions/roundCards of the
 		// winning player/card
 
+		if (!drawPile.isEmpty()) { // checks drawpile for cards
+
+			roundCards.addAll(drawPile);
+			drawPile.clear();
+			if (testLog) {
+				f.FileWriter("\nThere are now " + drawPile.size() + " cards in the common pile.\n\n");
+
+			}
+
+		}
+
 		if (!userEliminated && winningNumber == 0) {
 			System.out.println("\nThe winner of the round was the user.");
+			System.out.println("\nYou have been awarded " + roundCards.size() + " cards after winning the round.");
 
 		} else {
 			System.out.println("\nThe winner of the round was AIplayer" + activePlayerPositions.get(winningNumber));
@@ -230,17 +242,6 @@ public class GameCalc {
 
 		System.out.println("The winning card was: \n");
 		System.out.println(ShowCardInformation(classDeckArray, roundCards.get(winningNumber)));
-
-		if (!drawPile.isEmpty()) { // checks drawpile for cards
-
-			roundCards.addAll(drawPile);
-			drawPile.clear();
-			if (testLog) {
-				f.FileWriter("\nThere are now: " + drawPile.size() + " cards in the common pile.\n\n");
-
-			}
-
-		}
 
 		playerDecks[winningNumber].addAll(roundCards);
 		roundCards.clear();
@@ -345,7 +346,7 @@ public class GameCalc {
 		} else {
 			choice = (int) (Math.random() * 5 + 1);
 			System.out.println("\nAIplayer" + activePlayerPositions.get(currentPlayerPosition) + " selected attribute: "
-					+ classDeckArray[0][choice + 1]+ "\n");
+					+ classDeckArray[0][choice + 1] + "\n");
 			if (testLog) {
 				f.FileWriter("\nAIplayer" + activePlayerPositions.get(currentPlayerPosition) + " selected attribute: "
 						+ classDeckArray[0][choice + 1] + "\n");
