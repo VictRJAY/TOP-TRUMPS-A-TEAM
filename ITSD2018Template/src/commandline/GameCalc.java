@@ -5,7 +5,6 @@ import java.util.Collections;
 
 public class GameCalc {
 
-	// Consider making player/card objects to more easily pass stuff around
 
 	ArrayList<Integer> shuffledDeck = new ArrayList<Integer>();
 	ArrayList<Integer> drawPile = new ArrayList<Integer>(); // where we store drawn cards
@@ -15,20 +14,20 @@ public class GameCalc {
 	ArrayList<Integer> activePlayerPositions = new ArrayList<Integer>(); // here we store the positions of the players
 	// left in the game
 	int currentPlayerPosition;// determines who's turn it is to select an attribute
-
 	int numberOfPlayers; // needed for calculations
 
-	int roundCounter = 1; // These three variables we pass to the database after the game
+	int roundCounter = 1; // Persistent data variables
 	int drawCounter = 0;
 	String winner = "";
+	int[] playerRoundWins = new int[5]; 
 
-	boolean playerWins = false; // while (playerWins = false) run game CONSIDER REMOVING THIS AND JUST USING
-	boolean userEliminated = false; // needed so scanner doesnt run if user isn't in game
+	boolean playerWins = false; 
+	boolean userEliminated = false; 
 	boolean playerEliminatedThisRound = false;
-	boolean draw = false; // needed to not run AssignCard methods in OneRound() (currently line 38)
-	boolean testLog = false;
+	boolean draw = false; 
+	static boolean testLog = false;
 
-	int[][] playerRoundWins = new int[5][2]; // Here we store original player ID's and how many rounds they've won
+	
 	protected String[][] classDeckArray = new String[41][7];
 
 	GameSettings g = new GameSettings();
@@ -37,12 +36,12 @@ public class GameCalc {
 	public void StartOfGame() { // this runs once at the start of every game
 		System.out.println("Welcome! Type '9' at any point to quit the game.");
 		numberOfPlayers = (g.getNumberOfAIPlayers() + 1);
-		
+
 		Deck.FileReader();
 		setClassDeckArray(Deck.classDeckArray);
-		
+
 		ShuffleDeck();
-		DistributePlayerDecks(numberOfPlayers, shuffledDeck);
+		DistributePlayerDecks(numberOfPlayers);
 		randomizeStartingPosition(); // add who goes first as a syso
 		setPlayerID(numberOfPlayers);
 
@@ -84,7 +83,7 @@ public class GameCalc {
 		draw = false;
 		System.out.println("\nThe current round is: " + roundCounter);
 
-		if (!userEliminated && activePlayerPositions.get(currentPlayerPosition) == 0) { // displays who's turn it is
+		if (activePlayerPositions.get(currentPlayerPosition) == 0) { // displays who's turn it is
 			System.out.println("\nIt is the User's turn to select an attribute.");
 		} else {
 			System.out.println("\nIt is AIplayer" + activePlayerPositions.get(currentPlayerPosition)
@@ -139,7 +138,7 @@ public class GameCalc {
 		shuffledDeck = shuffledCardPositions;
 	}
 
-	public ArrayList<Integer>[] DistributePlayerDecks(int numOfPlayers, ArrayList<Integer> shuffledDeck) {
+	public ArrayList<Integer>[] DistributePlayerDecks(int numOfPlayers) {
 
 		// distributes deck between 2-5 players
 
@@ -247,12 +246,8 @@ public class GameCalc {
 	}
 
 	public void AssignRoundWin(int playerNumber) {
-		for (int i = 0; i < playerRoundWins.length; i++) {
-			if (playerRoundWins[i][0] == activePlayerPositions.get(playerNumber)) {
-				playerRoundWins[i][1]++;
-			}
+		playerRoundWins[playerNumber]++;
 
-		}
 	}
 
 	public void checkLoser() { // to be run after every round
@@ -309,8 +304,8 @@ public class GameCalc {
 	public void playerEliminated(int playerNumber) { // complete this when you know what you are doing
 
 		newPlayerDecks(playerNumber);
-		if (userEliminated && playerNumber == 0) {
-			System.out.println("The user was eliminated.");
+		if (activePlayerPositions.get(playerNumber) == 0) {
+			System.out.println("THE USER WAS ELIMINATED.");
 		} else {
 			System.out.println("AIplayer" + activePlayerPositions.get(playerNumber) + " WAS ELIMINATED. "); // playerlist
 		}
@@ -360,7 +355,6 @@ public class GameCalc {
 
 		for (int i = 0; i < numberOfPlayers; i++) {
 			activePlayerPositions.add(i); // maybe + 1 so it's 1-5 instead of 0-4?
-			playerRoundWins[i][0] = i;
 		}
 
 		return activePlayerPositions;
@@ -383,10 +377,14 @@ public class GameCalc {
 	}
 
 	public void determineWinner(int playerNumber) {
-		if (!userEliminated && playerNumber == 0) {
+		System.out.println("GAME IS OVER");
+
+		if (!userEliminated) {
 			winner = "User";
+			System.out.println("The winner of the game was the user.");
 		} else {
 			winner = "AIPlayer" + playerNumber;
+			System.out.println("The winner of the game was AIplayer: " + activePlayerPositions.get(0));
 		}
 	}
 

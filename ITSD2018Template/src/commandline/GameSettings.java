@@ -20,7 +20,7 @@ public class GameSettings {
 
 		int number = -1;
 		while (true) {
-			System.out.println("Enter numbers of AI Players(1-4):");
+			System.out.println("\nEnter numbers of AI Players(1-4):");
 
 			try {
 				number = s.nextInt();
@@ -41,7 +41,6 @@ public class GameSettings {
 	}
 
 	public void wouldYouLikeToContinue() {
-	//	System.out.println("Enter '1' to see the winner of the round, or 9 to quit the game.");
 		int number = -1;
 
 		while (!(number == 1 || number == 9)) {
