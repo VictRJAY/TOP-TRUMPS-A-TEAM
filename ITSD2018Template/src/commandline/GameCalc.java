@@ -5,6 +5,12 @@ import java.util.Collections;
 
 public class GameCalc {
 
+	/**
+	 * This class deals with all the calculations done for a CLI TopTrumps game.
+	 * This class calls the GameSettings for input, and FileWriting when the user
+	 * specifies that they want to write the game log to a file.
+	 * 
+	 */
 
 	ArrayList<Integer> shuffledDeck = new ArrayList<Integer>();
 	ArrayList<Integer> drawPile = new ArrayList<Integer>(); // where we store drawn cards
@@ -19,15 +25,14 @@ public class GameCalc {
 	int roundCounter = 1; // Persistent data variables
 	int drawCounter = 0;
 	String winner = "";
-	int[] playerRoundWins = new int[5]; 
+	int[] playerRoundWins = new int[5];
 
-	boolean playerWins = false; 
-	boolean userEliminated = false; 
+	boolean playerWins = false;
+	boolean userEliminated = false;
 	boolean playerEliminatedThisRound = false;
-	boolean draw = false; 
+	boolean draw = false;
 	static boolean testLog = false;
 
-	
 	protected String[][] classDeckArray = new String[41][7];
 
 	GameSettings g = new GameSettings();
@@ -48,11 +53,11 @@ public class GameCalc {
 		if (testLog) {
 			f.setClassDeckArray(classDeckArray);
 			f.setActivePlayerPositions(activePlayerPositions);
-			f.FileWriter("This is the original loaded deck:\n\n ");
+			f.FileWriter("\nThis is the original loaded deck:\n\n ");
 			f.Writing2D(classDeckArray);
-			f.FileWriter("This is the shuffled deck:\n\n ");
+			f.FileWriter("\nThis is the shuffled deck:\n\n ");
 			f.WriteCardInformation(shuffledDeck);
-			f.FileWriter("These are the player decks:\n\n ");
+			f.FileWriter("\nThese are the player decks:\n\n ");
 			f.WriteCardIDs(playerDecks);
 		}
 
@@ -64,7 +69,7 @@ public class GameCalc {
 		takeTopCards();
 
 		if (testLog) {
-			f.FileWriter("These are the cards played this round:\n\n ");
+			f.FileWriter("\nThese are the cards played this round:\n\n ");
 			f.WriteCardInformation(roundCards);
 			f.WriteCorrespondingAttributes(choice, roundCards);
 		}
@@ -108,14 +113,14 @@ public class GameCalc {
 			System.out.println("THIS ROUND WAS A DRAW: " + roundCounter); // testing
 			System.out.println("There are now: " + drawPile.size() + " cards in the common pile");
 			if (testLog) {
-				f.FileWriter("There are now: " + drawPile.size() + " cards in the common pile");
-				f.FileWriter("This is the drawPile:\n\n ");
+				f.FileWriter("\nThere are now: " + drawPile.size() + " cards in the common pile");
+				f.FileWriter("\nThis is the drawPile:\n\n ");
 				f.WriteCardInformation(drawPile);
 			}
 		}
 		if (testLog) {
 
-			f.FileWriter("These are the contents of players' decks after the round:\n\n ");
+			f.FileWriter("\nThese are the contents of players' decks after the round:\n\n ");
 			f.WriteCardIDs(playerDecks);
 		}
 
@@ -231,7 +236,7 @@ public class GameCalc {
 			roundCards.addAll(drawPile);
 			drawPile.clear();
 			if (testLog) {
-				f.FileWriter("There are now: " + drawPile.size() + " cards in the common pile");
+				f.FileWriter("\nThere are now: " + drawPile.size() + " cards in the common pile.\n\n");
 
 			}
 
@@ -257,7 +262,7 @@ public class GameCalc {
 			determineWinner(activePlayerPositions.get(0));
 
 			if (testLog) {
-				f.WriteWinnerToLog();
+				f.WriteWinnerToLog(userEliminated);
 			}
 
 		}
@@ -340,10 +345,10 @@ public class GameCalc {
 		} else {
 			choice = (int) (Math.random() * 5 + 1);
 			System.out.println("\nAIplayer" + activePlayerPositions.get(currentPlayerPosition) + " selected attribute: "
-					+ classDeckArray[0][choice + 1]);
+					+ classDeckArray[0][choice + 1]+ "\n");
 			if (testLog) {
 				f.FileWriter("\nAIplayer" + activePlayerPositions.get(currentPlayerPosition) + " selected attribute: "
-						+ classDeckArray[0][choice + 1]);
+						+ classDeckArray[0][choice + 1] + "\n");
 			}
 
 		}

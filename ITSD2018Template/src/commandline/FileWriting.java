@@ -7,15 +7,19 @@ import java.util.ArrayList;
 
 public class FileWriting {
 
+	/**
+	 * This class contains the methods needed for writing the game log to a
+	 * TestLog.log file.
+	 */
+
 	boolean startOfGame = true;
-	boolean userEliminated = false;
 	protected String[][] classDeckArray = new String[41][7];
 	ArrayList<Integer> activePlayerPositions = new ArrayList<Integer>();
+	String divider = "\n\n-------------------------------\n\n";
 
 	public void FileWriter(String content) {
 
-		File f = new File("TestLog.txt");
-		String divider = "\r\n-------------------------------\r\n";
+		File f = new File("TestLog.log");
 		if (!f.exists()) {
 			try {
 				f.createNewFile();
@@ -26,11 +30,11 @@ public class FileWriting {
 		try {
 			if (startOfGame) { // this boolean overwrites an existing TestLog.txt if it is the start of the
 								// game
-				FileWriter fw = new FileWriter("TestLog.txt", false);
+				FileWriter fw = new FileWriter("TestLog.log", false);
 				startOfGame = false;
 			}
-			FileWriter fw = new FileWriter("TestLog.txt", true); // right now it always appends if the file exists
-			fw.write(content + divider);
+			FileWriter fw = new FileWriter("TestLog.log", true); // right now it always appends if the file exists
+			fw.write(content);
 			fw.close();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -42,8 +46,6 @@ public class FileWriting {
 	 * This method takes an ArrayList<Integer> filled with card ID's and adds the
 	 * card information to a readable string ArrayLists to be run in this method for
 	 * 
-	 * testlog: contents of shuffledDeck, contents of drawPile, contents of
-	 * roundCards
 	 */
 	public void WriteCardInformation(ArrayList<Integer> al) {
 		String temp = "";
@@ -51,20 +53,12 @@ public class FileWriting {
 			temp += ShowCardInformation(classDeckArray, al.get(i));
 			temp += "\r\n";
 		}
-		FileWriter(temp);
+		FileWriter(temp + divider);
 	}
 
-	/*
-	 * This method takes an ArrayList<Integer>[] playerDeck arrays, which are in
-	 * turned filled with card ID's the method then adds these card ID's to a
-	 * readable string and writes it to the testlog.
-	 * 
-	 * Things to be run by this method: playerDecks after distribution playerDecks
-	 * after cards are added/removed
-	 */
+	public void WriteCardIDs(ArrayList<Integer>[] al) { // This method prints card ID's, a shorter of displaying cards
+														// in a players' deck
 
-	public void WriteCardIDs(ArrayList<Integer>[] al) { // INstead of a method that does this, write something that
-														// displays card name
 		String temp = "";
 		for (int i = 0; i < al.length; i++) {
 			if (activePlayerPositions.get(i) == 0) { // distinguishes between the user and AI players for the
@@ -81,7 +75,7 @@ public class FileWriting {
 
 			}
 		}
-		FileWriter(temp);
+		FileWriter(temp + divider);
 	}
 
 	// This method takes a String[][] and reformats it to a string that can be
@@ -96,20 +90,21 @@ public class FileWriting {
 			}
 			temp += "\r\n";
 		}
-		FileWriter(temp);
+		FileWriter(temp + divider);
 	}
 
 	public void WriteAllRoundCards(ArrayList<Integer> roundCards) {
 
 		String temp = "";
 		for (int i = 0; i < roundCards.size(); i++) {
-			temp += ShowCardInformation(classDeckArray, roundCards.get(i));
 			temp += "\r\n";
+			temp += ShowCardInformation(classDeckArray, roundCards.get(i));
+
 		}
-		FileWriter(temp);
+		FileWriter(temp + divider);
 	}
 
-	public void WriteWinnerToLog() {
+	public void WriteWinnerToLog(boolean userEliminated) {
 		String temp;
 		if (!userEliminated) {
 			temp = ("The winner of the game was the user.");
@@ -124,14 +119,15 @@ public class FileWriting {
 		String temp = "";
 		temp += "The chosen attribute is: " + classDeckArray[0][choice + 1] + "(" + choice + ")\r\n";
 		for (int i = 0; i < roundCards.size(); i++) {
-			temp += "Card: " + (i + 1) + " value is: " + classDeckArray[roundCards.get(i)][choice + 1];
+			temp += "Card" + (i + 1) + "'s value is: " + classDeckArray[roundCards.get(i)][choice + 1];
 			temp += "\r\n";
 		}
-		FileWriter(temp);
+		FileWriter(temp + divider);
 
 	}
 
-	public String ShowCardInformation(String[][] cards, int cardID) { // takes the ID of a card, compares it to the deck
+	public String ShowCardInformation(String[][] cards, int cardID) { // This method is passed a cardID , compares it to
+																		// the deck
 		// and returns all attributes
 
 		String information = "";

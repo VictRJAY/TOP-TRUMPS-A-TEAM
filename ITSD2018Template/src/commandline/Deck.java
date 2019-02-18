@@ -7,6 +7,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Deck {
+	
+	/**
+	 * This class reads in and stores the deck specified on line 21.
+	 */
 
 	protected static String[][] classDeckArray = new String[41][7];
 

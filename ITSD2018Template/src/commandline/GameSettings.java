@@ -2,9 +2,12 @@ package commandline;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import java.lang.*;
 
 public class GameSettings {
+
+	/**
+	 * This class deals with scanner input from the user for the CLI version.
+	 */
 
 	Scanner s = new Scanner(System.in);
 	static boolean userWantsToQuit = false;
