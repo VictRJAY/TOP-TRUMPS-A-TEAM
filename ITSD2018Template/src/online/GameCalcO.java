@@ -11,6 +11,7 @@ public class GameCalcO{
 	ArrayList<Card> shuffledDeck = new ArrayList<Card>();
 	public ArrayList<Player> Players = new ArrayList<Player>();
 	ArrayList<Card> drawPile = new ArrayList<Card>(); // where we store drawn cards
+	public int[] playersRoundWins = {0,0,0,0,0}; //since there is a maximum of five players
 	public int activeID = -1;
 	public int roundChoice = 0;
 	public int winnerID = -1;
@@ -63,6 +64,7 @@ public class GameCalcO{
 		ArrayList<Card> winnerCards = Compare();
 		winnerID = getWinnerID(winnerCards); //if its a draw it will return -1
 		if(winnerID != -1) {
+			playersRoundWins[winnerID] += 1; //increment the winner round wins by one
 			activeID = winnerID;
 		}
 		if(winnerCards.size()>1) {

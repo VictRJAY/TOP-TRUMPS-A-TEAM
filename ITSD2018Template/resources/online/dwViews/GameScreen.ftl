@@ -18,62 +18,107 @@
     	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
+		<link  rel="stylesheet" href="/assets/stylesheet/custom.css">
 	</head>
 
-    <body style="background-image: linear-gradient(brown, white);" onload="startGameAPI()">
+    <body class="page-background" onload="startGame()">
+    
+    	<div class="top-panel">
+			<div class="row pl-5 pb-1 panel-text">
+				<b>TOP TRUMPS: In Game</b>
+			</div>
+			<div class="row pr-5 pb-1 panel-buttons">
+			  <ul class="nav">
+			    <li class="mr-3"><a href="/toptrumps/" class="m-1 panel-button">Back</a></li>
+			  </ul>
+			</div>
+    	</div>
     	
     	<div class="container-fluid">
-	    	<div class="row m-2">
-				<div class="col-sm p-2" style="background: black; color: white; text-align: center;">
-					Playing Top Trump
-				</div>
-	    	</div>
 	    	
 	    	<div class="row m-2">
-				<div id="info-text" class="col-sm p-2" style="background: brown; color: white; font-weight: bold;">
+				<div id="info-text" class="col-sm p-2">
 					
 				</div>
 	    	</div>
-	    	
-	    	<div class="row m-1">
-		    	<div class="col-sm-2 next-round">
-			    	<div class="row">
-			    		<button id="game-button" type="button" onclick="NextRound(); return false;" class="btn btn-success">Next: Category Selection</button>
-			    	</div>
-		    		<div class="row" id="category-list">
-		    			
-		    		</div>
-		    	</div>
-		    	<div class="cards-display row">
-		    		
-		    	</div>
+	    	<div class="row center">
+	    		<button id="game-button" type="button" onclick="NextRound(); return false;" class="btn btn-success game-btn">Next: Category Selection</button>
 	    	</div>
 	    	
+	    	<div id="categoryModal" class="modal" tabindex="-1" role="dialog">
+			  	<div id="category-list">
+				      
+				</div>
+			</div>
+
+		    <div class="cards-display row mt-3 center">
+		    		
+		    </div>
 		</div>
+		
+		<div id="aiModal" class="modal" tabindex="-1" role="dialog">
+  	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header top-panel">
+	        <h5 class="modal-title">Amount of AI</h5>
+	        <button type="button" class="close" onclick="GoHome(); return;" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+		       <div class="form-group">
+				  <label for="usr">Enter Number of AI:</label>
+				  <input type="number" max="4" min="1" class="form-control" id="ai-amount" placeholder="4">
+				</div>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-success game-btn" onclick="startGameAPI(); return;">Start</button>
+	        <button type="button" class="btn btn-secondary default-btn" onclick="GoHome(); return;">Back</button>
+	      </div>
+	    </div>
+	  </div>
+			</div>
 		
 		<script type="text/javascript">
 		
 			var categoryList;
 			var roundStage = 0;
+			var gameID = -1;
 		
 			function GoHome() {		
 				window.location = "http://localhost:7777/toptrumps/";
 			}
 			
-			function startGameAPI() {
-				var xhr = createCORSRequest('GET', "http://localhost:7777/toptrumps/startGame");
+			function startGame() {
+				$('#aiModal').modal('toggle');	
+			}
+			
+			function startGameAPI(){
+				var aiNum = $('#ai-amount').val();
+				if(aiNum != null){
+					if(aiNum<1){
+						aiNum = 1;
+					}
+					if(aiNum>4){
+					aiNum = 4;}
+				}else{
+					aiNum = 4;
+				}
+				$('#aiModal').modal('toggle');
+				var xhr = createCORSRequest('GET', "http://localhost:7777/toptrumps/startGame?aiNum="+aiNum);
 				if (!xhr) {
   					alert("CORS not supported");
 				}
 				xhr.onload = function(e) {
- 					var booleanResponse = xhr.response;
+ 					gameID = xhr.response;
  					NextRound();
 				};
-				xhr.send();		
+				xhr.send();	
+			
 			}
 			
 			function getRoundInfo(){
-				var xhr = createCORSRequest('GET', "http://localhost:7777/toptrumps/getRoundInfo");
+				var xhr = createCORSRequest('GET', "http://localhost:7777/toptrumps/getRoundInfo?gameID="+gameID);
 				if (!xhr) {
   					alert("CORS not supported");
 				}
@@ -87,41 +132,52 @@
 			}
 			
 			function fetchUserCard() {
-				var xhr = createCORSRequest('GET', "http://localhost:7777/toptrumps/fetchUserInfo");
+				var xhr = createCORSRequest('GET', "http://localhost:7777/toptrumps/fetchUserInfo?gameID="+gameID);
 				if (!xhr) {
   					alert("CORS not supported");
 				}
 				xhr.onload = function(e) {
  					var userCardJSON = xhr.response;
  					var userCard = JSON.parse(userCardJSON);
-					displayUserCard(userCard);
+					displayCards(userCard);
 				};
 				xhr.send();		
 			}
 			
-			function displayUserCard(user){
-				$('.cards-display').html("");
-				if(categoryList == null){
-					fetchCategories(user);
-				}else{
-					if(user.name != null){
-						var cards ="<div class='m-4 card'  style='width: 12rem; height: 10rem;'>";
-						cards +="<h5>"+user.name+"</h5>";
-						cards +="<img class='card-img-top' src='/assets/cardPicture0.jpg' alt='Card image cap'>";
-						cards +="<h5 class='card-title'><b>"+user.cards[0].attributeValues[0]+"</b></h5>";
-						var j=1;
-						for(var i in user.cards[0].attributeValues){
-							if(i<5){
-								cards += "<p class='card-text'>"+categoryList[i]+": "+user.cards[0].attributeValues[j]+"</p>";
-								j++;
-							}
-						}
-						cards += "</div>";
-						$('.cards-display').html(cards);					
-					}
-
-				}
+			function displayCards(playersInfo){
+					var cards="";
+					var cardID = 0;
+					if(categoryList == null){
+						fetchCategories(playersInfo);
+					}else{
+						if(playersInfo != null){
+		 					for(var i in playersInfo){
+		 						cards +="<div class='m-2 card card-shape'>";
+		 						cards +="<div class='row player-name'><div class='col'>"+playersInfo[i].name+"</div></div>";
+		 						cards +="<div class='row card-name'><div class='col'><b>"+playersInfo[i].cards[0].attributeValues[0]+"</b></div></div>";
+		 						cards +="<div class='row' ><div class='col'><img class='card-img-top image-size' src='/assets/images/cardPicture"+cardID+".jpg' alt='Card image cap'></div></div>";
+		 						cards += "<div class='row' ><div class='col'><p class='card-text'>"
+		 						var k = 1;
+		 						for(var j in playersInfo[i].cards[0].attributeValues){
+			 						if(j<5){
+			 							cards += categoryList[j]+": <b>"+playersInfo[i].cards[0].attributeValues[k]+"</b></br>";
+			 							k++;
+			 						}
+		 						}
+		 						cards += "</p></div></div>";
+		 						cards +="<div class='row deck-size'><div class='col'>Cards Left: <b>"+playersInfo[i].cards.length+"</b></div></div>";
+		 						cards += "</div>";
+		 						cardID++;
+		 						if(cardID == 5){
+		 							cardID=0;
+		 						}
+		 					}
+	 					}
+	 				}
+ 					$('.cards-display').html(cards);
+					
 			}
+			
 			
 			function NextRound(){
 				if(!$('#info-text').html().includes("GAME OVER!") || $('#game-button').html().includes("New Game")){
@@ -145,7 +201,7 @@
 			}
 			
 			function isPlayerTurn() {
-				var xhr = createCORSRequest('GET', "http://localhost:7777/toptrumps/isTurn");
+				var xhr = createCORSRequest('GET', "http://localhost:7777/toptrumps/isTurn?gameID="+gameID);
 				if (!xhr) {
   					alert("CORS not supported");
 				}
@@ -170,7 +226,7 @@
 					xhr.onload = function(e) {
 	 					var categoryJSON = xhr.response;
 	 					categoryList = JSON.parse(categoryJSON);
-	 					displayUserCard(user)
+	 					displayCards(user)
 					};
 					xhr.send();
 				}
@@ -179,17 +235,19 @@
 			function displayCategories(){
 				var categories = "" 
 				for(var i in categoryList){
-					categories += '<tr><td><a onclick="sendSelectedCategory('+i+'); false;">'+categoryList[i]+'</a></td></tr>';
+					categories += '<tr onclick="sendSelectedCategory('+i+'); false;"><td><a>'+categoryList[i]+'</a></td></tr>';
 				}
-				$('#category-list').html('<table class="table table-bordered mt-1" style="background: grey; color: white;"><thead><tr style="background: black;"><th scope="col">Select A Category</th></tr></thead><tbody>'+categories+'</tbody></table>');
+				$('#category-list').html('<table class="table table-striped table-dark table-center" ><thead><tr><th scope="col">SELECT A CATEGORY</th></tr></thead><tbody>'+categories+'</tbody></table>');
+				$('#categoryModal').modal('toggle');
 			}
 
 			
 			function sendSelectedCategory(category) {
 				//enable button
 				 $('#game-button').prop('disabled', false);
+				 $('#categoryModal').modal('hide');
 				// First create a CORS request, this is the message we are going to send (a get request in this case)
-				var xhr = createCORSRequest('GET', "http://localhost:7777/toptrumps/sendCategory?Category="+category); // Request type and URL+parameters
+				var xhr = createCORSRequest('GET', "http://localhost:7777/toptrumps/sendCategory?Category="+category+"&gameID="+gameID); // Request type and URL+parameters
 				
 				// Message is not sent yet, but we can check that the browser supports CORS
 				if (!xhr) {
@@ -213,7 +271,7 @@
 			
 				$('#game-button').html("Next: Show Winner");
 				// First create a CORS request, this is the message we are going to send (a get request in this case)
-				var xhr = createCORSRequest('GET', "http://localhost:7777/toptrumps/playersInfo"); // Request type and URL+parameters
+				var xhr = createCORSRequest('GET', "http://localhost:7777/toptrumps/playersInfo?gameID="+gameID); // Request type and URL+parameters
 				
 				// Message is not sent yet, but we can check that the browser supports CORS
 				if (!xhr) {
@@ -231,7 +289,7 @@
 					}else{
 						playersInfo = JSON.parse(xhr.response);
 					}
- 					populateCards(playersInfo);
+ 					displayCards(playersInfo);
 					$('#category-list').html("");
 				};
 				
@@ -239,34 +297,10 @@
 				xhr.send();
 			}
 
-			function populateCards(playersInfo){
-					var cards="";
-					var cardID = 0;
- 					for(var i in playersInfo){
- 						cards +="<div class='m-2 card'  style='width: 12rem; height: 10rem;'>";
- 						cards +="<h5>"+playersInfo[i].name+". <b>"+playersInfo[i].cards.length+"</b></h5>";
- 						cards +="<img class='card-img-top' src='/assets/cardPicture"+cardID+".jpg' alt='Card image cap'>";
- 						cards +="<h5 class='card-title'>"+playersInfo[i].cards[0].attributeValues[0]+"</h5>";
- 						var k = 1;
- 						for(var j in playersInfo[i].cards[0].attributeValues){
-	 						if(j<5){
-	 							cards += "<p class='card-text'>"+categoryList[j]+": "+playersInfo[i].cards[0].attributeValues[k]+"</p>";
-	 							k++;
-	 						}
- 						}
- 						cards += "</div>";
- 						cardID++;
- 						if(cardID == 5){
- 							cardID=0;
- 						}
- 					}
- 					$('.cards-display').html(cards);
-					
-			}
-			
+
 			function completeTurn(){
 				// First create a CORS request, this is the message we are going to send (a get request in this case)
-				var xhr = createCORSRequest('GET', "http://localhost:7777/toptrumps/completeTurn"); // Request type and URL+parameters
+				var xhr = createCORSRequest('GET', "http://localhost:7777/toptrumps/completeTurn?gameID="+gameID); // Request type and URL+parameters
 				
 				// Message is not sent yet, but we can check that the browser supports CORS
 				if (!xhr) {
@@ -314,9 +348,4 @@
 
 		
 		</body>
-		<footer>
-			<div class="row m-5 fixed-bottom">
-	    		<button type="button" class="btn btn-primary" onclick="GoHome(); return false;">Quit</button>
-	    	</div>
-		</footer>
 </html>

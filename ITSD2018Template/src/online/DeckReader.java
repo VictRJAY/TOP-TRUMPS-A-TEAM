@@ -23,6 +23,7 @@ public class DeckReader {
 
         try {
             br = new BufferedReader(new FileReader(deckFile));
+            Card.attributeHeaders = null;
             while ((line = br.readLine()) != null) {
 
                 //break the line into substring (string array) with the splicer

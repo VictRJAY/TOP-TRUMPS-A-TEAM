@@ -40,8 +40,7 @@ public class TopTrumpsRESTAPI {
 	/** A Jackson Object writer. It allows us to turn Java objects
 	 * into JSON strings easily. */
 	ObjectWriter oWriter = new ObjectMapper().writerWithDefaultPrettyPrinter();
-	GameCalcO gameCalculator;
-	ArrayList<Player> playersRoundInfo;
+	ArrayList<GameCalcO> gameCalculator;
 	
 	/**
 	 * Contructor method for the REST API. This is called first. It provides
@@ -53,7 +52,7 @@ public class TopTrumpsRESTAPI {
 		// ----------------------------------------------------
 		// Add relevant initalization here
 		// ----------------------------------------------------
-		
+		gameCalculator = new ArrayList<GameCalcO>();
 		
 	}
 	
@@ -64,33 +63,40 @@ public class TopTrumpsRESTAPI {
 	@GET
 	@Path("/startGame")
 
-	public boolean startGame() throws IOException {
+	public String startGame(@QueryParam("aiNum") String aiNum) throws IOException {
 		//returns if its the humans turn or not in boolean
-		gameCalculator = new GameCalcO();
-		gameCalculator.StartOfGame(5);
-		return true;
+		gameCalculator.add(new GameCalcO());
+		int aiAmount = Integer.parseInt(aiNum);
+		int gameNumber = gameCalculator.size()-1;
+		gameCalculator.get(gameNumber).StartOfGame(aiAmount+1);
+		return ""+gameNumber;
 	}
 	
 	@GET
 	@Path("/getRoundInfo")
 
-	public String getRoundInfo() throws IOException {
-		
-		return gameCalculator.beginningOfRoundInfo();
+	public String getRoundInfo(@QueryParam("gameID") String gameID) throws IOException {
+		int gameIndex = Integer.parseInt(gameID);
+		return gameCalculator.get(gameIndex).beginningOfRoundInfo();
 		
 	}
 	
 	@GET
 	@Path("/fetchUserInfo")
 
-	public String fetchUserInfo() throws IOException {
+	public String fetchUserInfo(@QueryParam("gameID") String gameID) throws IOException {
+		
+		String listAsJSONString = "";
+		int gameIndex = Integer.parseInt(gameID);
 		
 		ArrayList<Card> topCards = new ArrayList<Card>();
-		topCards.add(gameCalculator.getPlayer(0).getCards().get(0));
+		topCards.add(gameCalculator.get(gameIndex).getPlayer(0).getCards().get(0));
 		
-		Player player = new Player(gameCalculator.getPlayer(0).getId(),gameCalculator.getPlayer(0).getName(),topCards);
-		
-		String listAsJSONString = oWriter.writeValueAsString(player);
+		if(gameCalculator.get(gameIndex).getPlayer(0) != null) {
+			ArrayList<Player> tempPlayers = new ArrayList<Player>();
+			tempPlayers.add(gameCalculator.get(gameIndex).getPlayer(0));
+			listAsJSONString = oWriter.writeValueAsString(tempPlayers);
+		}
 		
 		return listAsJSONString;
 	}
@@ -98,9 +104,10 @@ public class TopTrumpsRESTAPI {
 	@GET
 	@Path("/isTurn")
 
-	public boolean isTurn() throws IOException {
+	public boolean isTurn(@QueryParam("gameID") String gameID) throws IOException {
 		//returns if its the humans turn or not in boolean
-		return gameCalculator.isPlayerTurn();
+		int gameIndex = Integer.parseInt(gameID);
+		return gameCalculator.get(gameIndex).isPlayerTurn();
 	}
 
 	
@@ -119,24 +126,34 @@ public class TopTrumpsRESTAPI {
 	@GET
 	@Path("/sendCategory")
 
-	public String sendCategory(@QueryParam("Category") String category) throws IOException {
+	public String sendCategory(@QueryParam("Category") String category,@QueryParam("gameID") String gameID) throws IOException {
 		//sends the category selected to game calc class to store
-		gameCalculator.roundChoice = 1+Integer.parseInt(category);
-		playersRoundInfo = gameCalculator.Players;
-		return gameCalculator.endOfRoundInfo();
+		int gameIndex = Integer.parseInt(gameID);
+		gameCalculator.get(gameIndex).roundChoice = 1+Integer.parseInt(category);
+		return gameCalculator.get(gameIndex).endOfRoundInfo();
 	}
 	
 	@GET
 	@Path("/playersInfo")
 
-	public String playersInfo() throws IOException {
+	public String playersInfo(@QueryParam("gameID") String gameID) throws IOException {
 		String stage2Info ="";
-		if(!gameCalculator.isPlayerTurn()) {
-			stage2Info = sendCategory(String.valueOf((int) (Math.random() * 5)))+"<>";
+		int gameIndex = Integer.parseInt(gameID);
+		if(!gameCalculator.get(gameIndex).isPlayerTurn()) {
+			stage2Info = sendCategory(String.valueOf((int) (Math.random() * 5)),gameID)+"<>";
 		}
-		String listAsJSONString = oWriter.writeValueAsString(playersRoundInfo);
+		String listAsJSONString = oWriter.writeValueAsString(gameCalculator.get(gameIndex).Players);
 		
 		return stage2Info+listAsJSONString;
+	}
+	
+	@GET
+	@Path("/gameCount")
+
+	public String gameCount() throws IOException {
+		dbConnect d = new dbConnect();
+		String gameCount = ""+d.getTotalGames();
+		return gameCount;
 	}
 
 	@GET
@@ -147,29 +164,29 @@ public class TopTrumpsRESTAPI {
 	 * @return - List of words as JSON
 	 * @throws IOException
 	 */
-	public String completeTurn() throws IOException {
-
-		gameCalculator.OneRound();
-		String endstatement = gameCalculator.finish();
+	public String completeTurn(@QueryParam("gameID") String gameID) throws IOException {
+		int gameIndex = Integer.parseInt(gameID);
+		gameCalculator.get(gameIndex).OneRound();
+		String endstatement = gameCalculator.get(gameIndex).finish();
 		
 		if(endstatement.contains("GAME OVER")) {
 			try {
 				dbConnect d = new dbConnect();
-				//d.connection();
 				String winnerString = "";
-				Player winner = gameCalculator.Players.get(0);
+				Player winner = gameCalculator.get(gameIndex).Players.get(0);
 				if(winner.getId() == 0) {
 					winnerString = "PLAYER";
 				}else {
 					winnerString = "AI";
 				}
-				d.dbValuesImport(String.valueOf(gameCalculator.drawCounter),winnerString,String.valueOf(gameCalculator.roundCounter));
+				d.dbInsertGameRow(String.valueOf(gameCalculator.get(gameIndex).drawCounter),winnerString,String.valueOf(gameCalculator.get(gameIndex).roundCounter),gameCalculator.get(gameIndex).playersRoundWins);
+				d.closeConnection();
 			} catch (Exception e) {
 				//e.printStackTrace();
 			}
 		}else {
 			
-			gameCalculator.roundCounter++;
+			gameCalculator.get(gameIndex).roundCounter++;
 			
 		}
 		return endstatement;

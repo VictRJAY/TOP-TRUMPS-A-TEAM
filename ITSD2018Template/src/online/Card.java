@@ -12,9 +12,9 @@ public class Card {
 	}
 	
 	public String toS() {
-		String retValue = "";
+		String retValue = ""+attributeValues.get(0);
 		for(int i =0;i<attributeHeaders.size();i++) {
-			retValue += String.format(" %s: %s ", attributeHeaders.get(i),attributeValues.get(i));
+			retValue += String.format(" %s: %s ", attributeHeaders.get(i),attributeValues.get(i+1));
 		}
 		return retValue;
 	}

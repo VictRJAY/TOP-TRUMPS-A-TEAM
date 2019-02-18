@@ -18,36 +18,48 @@
     	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
+		<link  rel="stylesheet" href="/assets/stylesheet/custom.css">
 	</head>
 
-    <body onload="initalize()" style="background-image: linear-gradient(brown, white);"> <!-- Call the initalize method when the page loads -->
+    <body onload="initalize()" class="page-background"> <!-- Call the initalize method when the page loads -->
+    
+        <div class="top-panel">
+			<div class="row pl-5 pb-1 panel-text">
+				<b>TOP TRUMPS: Statistics</b>
+			</div>
+			<div class="row pr-5 pb-1 panel-buttons">
+			  <ul class="nav">
+			    <li class="mr-3"><a href="/toptrumps/" class="m-1 panel-button">Back</a></li>
+			  </ul>
+			</div>
+    	</div>
     	
-    	<div class="container">
+    	<div class="container stat-table">
 
 			<!-- Add your HTML Here -->
 			<div class="row mt-5">
-				<table class="table table-bordered" style="background: grey; color: white;">
+				<table class="table table-striped table-dark table-center">
 				  <thead>
 				    <tr style="background: black;">
-				      <th scope="col">New Game</th>
+				      <th class="lefted" scope="col">Description</th>
 				      <th scope="col">No</th>
 				    </tr>
 				  </thead>
 				  <tbody>
 				    <tr>
-				      <td>Number of games</td>
+				      <td class="lefted">Number of games</td>
+				      <td id="game-nums">0</td>
+				    </tr>
+				    <tr>
+				      <td class="lefted">Number of AI wins</td>
 				      <td>0</td>
 				    </tr>
 				    <tr>
-				      <td>Number of AI wins</td>
-				      <td>0</td>
-				    </tr>
-				    <tr>
-				      <td>Average draws per game</td>
+				      <td class="lefted">Average draws per game</td>
 				      <td>0</td>
 				    </tr>				    
 				    <tr>
-				      <td>Longest Game</td>
+				      <td class="lefted">Longest Game</td>
 				      <td>0</td>
 				    </tr>
 				  </tbody>
@@ -65,9 +77,7 @@
 				// You can call other methods you want to run when the page first loads here
 				// --------------------------------------------------------------------------
 				
-				// For example, lets call our sample methods
-				//helloJSONList();
-				//helloWord("Student");
+				gameCount();
 				
 			}
 
@@ -78,6 +88,27 @@
 						
 				window.location = "http://localhost:7777/toptrumps/";
 				
+			}
+			
+			function gameCount() {
+			
+				// First create a CORS request, this is the message we are going to send (a get request in this case)
+				var xhr = createCORSRequest('GET', "http://localhost:7777/toptrumps/gameCount"); // Request type and URL
+				
+				// Message is not sent yet, but we can check that the browser supports CORS
+				if (!xhr) {
+  					alert("CORS not supported");
+				}
+
+				// CORS requests are Asynchronous, i.e. we do not wait for a response, instead we define an action
+				// to do when the response arrives 
+				xhr.onload = function(e) {
+ 					var responseText = xhr.response; // the text of the response
+					$('#game-nums').html(responseText);
+				};
+				
+				// We have done everything we need to prepare the CORS request, so send it
+				xhr.send();		
 			}
 		
 		
@@ -158,9 +189,4 @@
 		</script>
 		
 		</body>
-		<footer>
-			<div class="row m-5 fixed-bottom">
-	    		<button type="button" class="btn btn-primary" onclick="GoHome(); return false;">Back</button>
-	    	</div>
-		</footer>
 </html>

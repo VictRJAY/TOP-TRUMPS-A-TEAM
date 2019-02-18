@@ -1,0 +1,161 @@
+.page-background{
+	background: grey;
+}
+
+.img-background{
+	background-image: url("/assets/images/homeBackground2.png");
+	background-position: center;
+}
+
+.top-panel{
+	background: darkgreen;
+	color: white;
+	height: 40px;
+	position: relative;
+}
+
+.panel-text{
+ 	position: absolute;
+ 	bottom: 0;
+ 	left: 0;
+}
+
+.panel-buttons{
+ 	position: absolute;
+ 	bottom: 0;
+ 	right: 0;
+}
+
+.panel-button{
+ 	color: white;
+}
+
+.game-logo{
+	color: white;
+	font-size: 100px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.game-description{
+	color: white;
+	font-size: 35px;
+	font-weight: bold;
+	text-align: center;
+}
+
+/* GAME SCREEN STYLE SHEET */
+
+#info-text{
+	font-size: 40px;
+	font-family: initial;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+}
+
+.center{
+	margin: auto;
+  	width: fit-content;
+}
+
+.game-btn{
+	align:center;
+	font-size: 18px;
+	font-family: initial;
+	background-color: darkgreen;
+    border-color: darkgreen;
+}
+
+.default-btn{
+	align:center;
+	font-size: 18px;
+	font-family: initial;
+}
+
+#category-list{
+	margin-left: 35%;
+	margin-right: 35%;
+	margin-top: 45px;
+}
+
+.table-center{
+    text-align: center;
+    font-size: 20px;
+    font-family: initial;
+}
+
+.modal-backdrop
+{
+    opacity:0.5 !important;
+}
+
+.card-shape{
+	width: 200px;
+	height: 350px;
+	padding: 5px;
+	background: white;
+}
+
+.player-name{
+	font-size: 20px;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	margin: -4%;
+	background: darkgreen;
+}
+
+.card-name{
+	padding:10px;
+	color: black;
+	font-size: 18px;
+	text-align: center;
+}
+
+.image-size{
+	height: 100px;
+	width: 187px;
+}
+
+.card-text{
+	text-align: center;
+    line-height: 2.4;
+	color: black;
+	padding-bottom: 5px;
+}
+
+.deck-size{
+	font-size: 15px;
+	text-align: right;
+	color: white;
+	text-align: center;
+	margin: -4%;
+	background: darkgreen;
+}
+
+/* GSTATISTICS STYLE SHEET */
+
+.lefted{
+	text-align: left;
+}
+
+.stat-table{
+    margin-top: 10%;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}

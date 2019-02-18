@@ -17,32 +17,57 @@
     	<link rel="stylesheet" href="http://dcs.gla.ac.uk/~richardm/assets/stylesheets/vex-theme-os.css"/>
     	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		
+		<link  rel="stylesheet" href="/assets/stylesheet/custom.css">
 
 	</head>
 
-    <body style="background-image: linear-gradient(brown, white);">
+    <body class="page-background">
     	
-    	<div class="container" >
-    		<div class="row m-2">
-				<div class="col p-2" style="background: grey; color: white; text-align: center;">
-					<b>TOP TRUMPS</b>
-				</div>
-	    	</div>
-			<div class= "row mt-1">
-				<button type="button" class="btn btn-secondary col-sm mr-1" onclick="startGame(); return false;"> New Game </button>
-				<button type="button" class="btn btn-secondary col-sm ml-1" onclick="getStats(); return false;"> Show Statistics </button>
-	    	</div>
+		<div class="top-panel">
+			<div class="row pl-5 pb-1 panel-text">
+				<b>TOP TRUMPS</b>
+			</div>
+			<div class="row pr-5 pb-1 panel-buttons">
+			  <ul class="nav">
+			    <li class="mr-3"><a href="/toptrumps/game" class="m-1 panel-button">NEW GAME</a></li>
+			    <li class=""><a href="/toptrumps/stats" class="m-1 panel-button">STATISTICS</a></li>
+			  </ul>
+			</div>
+    	</div>
+    	
+    	<div>
+    	
+    		<div class="container ">
+    			<div class="row">
+	    			<div class="col">
+	    			<h1 class="game-logo">TOP TRUMPS</h1>
+	    			</div>
+    			</div>
+	    		<div class="row">
+	    			<div class="col">
+			    		<p class="game-description">Top Trumps is a simple card game in which decks of 
+			    		cards are based on a theme.  
+			    		The objective of the game is to 'trump' your opponent by selecting a category (e.g. firepower)
+			    		 and having a "better" value for your card than the opponent does in their current card.
+			    		 Start a new game or check the games records.
+			    		</p>
+		    		</div>
+		    	</div>
+		    	<div class="row center">
+		    		<div class="col">
+		    			<a type="button" href="/toptrumps/game" class="btn btn-success game-btn">New Game</a>
+		    		</div>
+		    		<div class="col">
+		    			<a type="button" href="/toptrumps/stats" class="btn btn-success game-btn">Statistics</a>
+		    		</div>
+		    	</div>
+    		</div>
+    	        
 		</div>
 		
 		<script type="text/javascript">
 			
-			function startGame(){
-				 window.location = 'http://localhost:7777/toptrumps/game';
-			}
-			
-			function getStats(){
-				 window.location = 'http://localhost:7777/toptrumps/stats';
-			}
 			
 		</script>
 		</body>
