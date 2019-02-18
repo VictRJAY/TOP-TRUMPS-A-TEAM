@@ -66,8 +66,8 @@ public class dbConnect
 			{
 		Statement statement;
 // turning postgreSQL statement into a string of values
-		String gameInfoQuery = "INSERT INTO GAME (DRAWS_PER_GAME, WINNER, ROUND_COUNTER, USER_ROUND_WIN, "
-				+ "AI1_ROUND_WIN, AI2_ROUND_WIN, AI3_ROUND_WIN, AI4_ROUND_WIN,) "
+		String gameInfoQuery = "INSERT INTO game (draws_per_game, WINNER, ROUND_COUNTER, USER_ROUND_WIN, "
+				+ "AI1_ROUND_WIN, AI2_ROUND_WIN, AI3_ROUND_WIN, AI4_ROUND_WIN) "
 				+ "VALUES ('" + drawsPerGame + "','" + winner + "','" + roundCounter + "','"+plysRndWins[0]+"','"+plysRndWins[1]+"'"
 				+ ",'"+plysRndWins[2]+"','"+plysRndWins[3]+"','"+plysRndWins[4]+"')";
 // inserting postgreSQL query to the database
@@ -99,10 +99,12 @@ public class dbConnect
 		try {
 			statement = connection.createStatement();
 			ResultSet rSet = statement.executeQuery("SELECT * FROM GAME");
-			rSet.last();
-			result = rSet.getRow();
+			while(rSet.next()) {
+				result = rSet.getRow();
+			}
+			statement.close();
 		}catch(Exception e) {
-			
+			e.printStackTrace();
 		}
 		
 		return result;
@@ -114,9 +116,10 @@ public class dbConnect
 		int result = 0;
 		try {
 			statement = connection.createStatement();
-			ResultSet rSet = statement.executeQuery("SELECT * FROM GAME WHERE WINNER = 'USER'");
-			rSet.last();
-			result = rSet.getRow();
+			ResultSet rSet = statement.executeQuery("SELECT * FROM GAME WHERE WINNER = 'User'");
+			while(rSet.next()) {
+				result = rSet.getRow();
+			}
 		}catch(Exception e) {
 			
 		}
@@ -129,9 +132,10 @@ public class dbConnect
 		int result = 0;
 		try {
 			statement = connection.createStatement();
-			ResultSet rSet = statement.executeQuery("SELECT * FROM GAME WHERE WINNER <> 'USER'");
-			rSet.last();
-			result = rSet.getRow();
+			ResultSet rSet = statement.executeQuery("SELECT * FROM GAME WHERE WINNER <> 'User'");
+			while(rSet.next()) {
+				result = rSet.getRow();
+			}
 		}catch(Exception e) {
 			
 		}

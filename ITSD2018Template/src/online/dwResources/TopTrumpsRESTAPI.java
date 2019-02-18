@@ -151,10 +151,89 @@ public class TopTrumpsRESTAPI {
 	@Path("/gameCount")
 
 	public String gameCount() throws IOException {
-		dbConnect d = new dbConnect();
-		String gameCount = ""+d.getTotalGames();
+		String gameCount = "";
+		try {
+			dbConnect d = new dbConnect();
+			gameCount = ""+d.getTotalGames();
+			d.closeConnection();
+		}catch(Exception e) {
+			
+		}	
+		
 		return gameCount;
 	}
+	
+	
+	@GET
+	@Path("/aiWins")
+
+	public String aiWins() throws IOException {
+		String gameCount = "";
+		try {
+			dbConnect d = new dbConnect();
+			gameCount = ""+d.getTotalAIVictories();
+			
+			d.closeConnection();
+		}catch(Exception e) {
+			
+		}	
+		
+		return gameCount;
+	}
+
+	
+	@GET
+	@Path("/userWins")
+
+	public String userWins() throws IOException {
+		String gameCount = "";
+		try {
+			dbConnect d = new dbConnect();
+			gameCount = ""+d.getTotalUserVictories();
+			
+			d.closeConnection();
+		}catch(Exception e) {
+			
+		}	
+		
+		return gameCount;
+	}
+	
+	@GET
+	@Path("/averageDraws")
+
+	public String averageDraws() throws IOException {
+		String gameCount = "";
+		try {
+			dbConnect d = new dbConnect();
+			gameCount = ""+d.getAverageDraws();
+			
+			d.closeConnection();
+		}catch(Exception e) {
+			
+		}	
+		
+		return gameCount;
+	}
+	
+	
+	@GET
+	@Path("/longestGame")
+
+	public String longestGame() throws IOException {
+		String gameCount = "";
+		try {
+			dbConnect d = new dbConnect();
+			gameCount = ""+d.getHighestRoundNumber();
+			
+			d.closeConnection();
+		}catch(Exception e) {
+			
+		}	
+		
+		return gameCount;
+	}
+	
 
 	@GET
 	@Path("/completeTurn")
@@ -174,12 +253,8 @@ public class TopTrumpsRESTAPI {
 				dbConnect d = new dbConnect();
 				String winnerString = "";
 				Player winner = gameCalculator.get(gameIndex).Players.get(0);
-				if(winner.getId() == 0) {
-					winnerString = "PLAYER";
-				}else {
-					winnerString = "AI";
-				}
-				d.dbInsertGameRow(String.valueOf(gameCalculator.get(gameIndex).drawCounter),winnerString,String.valueOf(gameCalculator.get(gameIndex).roundCounter),gameCalculator.get(gameIndex).playersRoundWins);
+
+				d.dbInsertGameRow(String.valueOf(gameCalculator.get(gameIndex).drawCounter),winner.getName(),String.valueOf(gameCalculator.get(gameIndex).roundCounter),gameCalculator.get(gameIndex).playersRoundWins);
 				d.closeConnection();
 			} catch (Exception e) {
 				//e.printStackTrace();

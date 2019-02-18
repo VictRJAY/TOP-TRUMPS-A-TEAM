@@ -61,6 +61,7 @@
 		    		<div class="col">
 		    			<button type="button" onclick="stats(); return false;" class="btn btn-success game-btn">Statistics</button>
 		    		</div>
+
 		    	</div>
     		</div>
     	        
@@ -77,6 +78,8 @@
 			
 				window.location = "http://localhost:7777/toptrumps/stats";
 			}
+
+					
 			
 		</script>
 		</body>
