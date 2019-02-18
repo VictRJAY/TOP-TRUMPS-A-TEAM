@@ -56,10 +56,10 @@
 		    	</div>
 		    	<div class="row center">
 		    		<div class="col">
-		    			<a type="button" href="/toptrumps/game" class="btn btn-success game-btn">New Game</a>
+		    			<button type="button" onclick="game(); return false;" class="btn btn-success game-btn">New Game</button>
 		    		</div>
 		    		<div class="col">
-		    			<a type="button" href="/toptrumps/stats" class="btn btn-success game-btn">Statistics</a>
+		    			<button type="button" onclick="stats(); return false;" class="btn btn-success game-btn">Statistics</button>
 		    		</div>
 		    	</div>
     		</div>
@@ -68,6 +68,15 @@
 		
 		<script type="text/javascript">
 			
+			function game(){
+			
+				window.location = "http://localhost:7777/toptrumps/game";
+			}
+			
+			function stats(){
+			
+				window.location = "http://localhost:7777/toptrumps/stats";
+			}
 			
 		</script>
 		</body>
