@@ -1,0 +1,3616 @@
+This is the original loaded deck:
+
+ 
+CardID	Description	Size	Speed	Range	Firepower	Cargo	
+1	350r	1	9	2	3	0	
+2	Avenger	2	5	4	3	2	
+3	Carrack	6	2	10	4	6	
+4	Constellation	4	5	7	3	4	
+5	Hawk	1	3	2	4	0	
+6	Hornet	2	5	3	4	1	
+7	Hurricane	2	5	3	5	0	
+8	Idris	8	2	7	10	6	
+9	m50	1	10	2	2	0	
+10	Merchantman	7	3	5	6	8	
+11	Orion	10	1	6	2	9	
+12	Sabre	2	7	2	5	0	
+13	Vanguard	3	4	5	5	2	
+14	350r	1	9	2	3	0	
+15	Avenger	2	5	4	3	2	
+16	Carrack	6	2	10	4	6	
+17	Constellation	4	5	7	3	4	
+18	Hawk	1	3	2	4	0	
+19	Hornet	2	5	3	4	1	
+20	Hurricane	2	5	3	5	0	
+21	Idris	8	2	7	10	6	
+22	m50	1	10	2	2	0	
+23	Merchantman	7	3	5	6	8	
+24	Orion	10	1	6	2	9	
+25	Sabre	2	7	2	5	0	
+26	Vanguard	3	4	5	5	2	
+27	350r	1	9	2	3	0	
+28	Avenger	2	5	4	3	2	
+29	Carrack	6	2	10	4	6	
+30	Constellation	4	5	7	3	4	
+31	Hawk	1	3	2	4	0	
+32	Hornet	2	5	3	4	1	
+33	Hurricane	2	5	3	5	0	
+34	Idris	8	2	7	10	6	
+35	m50	1	10	2	2	0	
+36	Merchantman	7	3	5	6	8	
+37	Orion	10	1	6	2	9	
+38	Sabre	2	7	2	5	0	
+39	Vanguard	3	4	5	5	2	
+40	Avenger	2	5	4	3	2	
+
+This is the shuffled deck:
+
+ 
+ROUND: 0
+Card Name: 
+Merchantman
+Attribute 1: 7
+Attribute 2: 3
+Attribute 3: 5
+Attribute 4: 6
+Attribute 5: 8
+Card Name: 
+Hornet
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 3
+Attribute 4: 4
+Attribute 5: 1
+Card Name: 
+Avenger
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 4
+Attribute 4: 3
+Attribute 5: 2
+Card Name: 
+Carrack
+Attribute 1: 6
+Attribute 2: 2
+Attribute 3: 10
+Attribute 4: 4
+Attribute 5: 6
+Card Name: 
+Carrack
+Attribute 1: 6
+Attribute 2: 2
+Attribute 3: 10
+Attribute 4: 4
+Attribute 5: 6
+Card Name: 
+Hornet
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 3
+Attribute 4: 4
+Attribute 5: 1
+Card Name: 
+m50
+Attribute 1: 1
+Attribute 2: 10
+Attribute 3: 2
+Attribute 4: 2
+Attribute 5: 0
+Card Name: 
+m50
+Attribute 1: 1
+Attribute 2: 10
+Attribute 3: 2
+Attribute 4: 2
+Attribute 5: 0
+Card Name: 
+Carrack
+Attribute 1: 6
+Attribute 2: 2
+Attribute 3: 10
+Attribute 4: 4
+Attribute 5: 6
+Card Name: 
+Idris
+Attribute 1: 8
+Attribute 2: 2
+Attribute 3: 7
+Attribute 4: 10
+Attribute 5: 6
+Card Name: 
+Constellation
+Attribute 1: 4
+Attribute 2: 5
+Attribute 3: 7
+Attribute 4: 3
+Attribute 5: 4
+Card Name: 
+Hurricane
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 3
+Attribute 4: 5
+Attribute 5: 0
+Card Name: 
+Hurricane
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 3
+Attribute 4: 5
+Attribute 5: 0
+Card Name: 
+Sabre
+Attribute 1: 2
+Attribute 2: 7
+Attribute 3: 2
+Attribute 4: 5
+Attribute 5: 0
+Card Name: 
+Orion
+Attribute 1: 10
+Attribute 2: 1
+Attribute 3: 6
+Attribute 4: 2
+Attribute 5: 9
+Card Name: 
+Avenger
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 4
+Attribute 4: 3
+Attribute 5: 2
+Card Name: 
+Vanguard
+Attribute 1: 3
+Attribute 2: 4
+Attribute 3: 5
+Attribute 4: 5
+Attribute 5: 2
+Card Name: 
+Hornet
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 3
+Attribute 4: 4
+Attribute 5: 1
+Card Name: 
+Avenger
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 4
+Attribute 4: 3
+Attribute 5: 2
+Card Name: 
+350r
+Attribute 1: 1
+Attribute 2: 9
+Attribute 3: 2
+Attribute 4: 3
+Attribute 5: 0
+Card Name: 
+Idris
+Attribute 1: 8
+Attribute 2: 2
+Attribute 3: 7
+Attribute 4: 10
+Attribute 5: 6
+Card Name: 
+Sabre
+Attribute 1: 2
+Attribute 2: 7
+Attribute 3: 2
+Attribute 4: 5
+Attribute 5: 0
+Card Name: 
+Hurricane
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 3
+Attribute 4: 5
+Attribute 5: 0
+Card Name: 
+Constellation
+Attribute 1: 4
+Attribute 2: 5
+Attribute 3: 7
+Attribute 4: 3
+Attribute 5: 4
+Card Name: 
+Idris
+Attribute 1: 8
+Attribute 2: 2
+Attribute 3: 7
+Attribute 4: 10
+Attribute 5: 6
+Card Name: 
+Constellation
+Attribute 1: 4
+Attribute 2: 5
+Attribute 3: 7
+Attribute 4: 3
+Attribute 5: 4
+Card Name: 
+Vanguard
+Attribute 1: 3
+Attribute 2: 4
+Attribute 3: 5
+Attribute 4: 5
+Attribute 5: 2
+Card Name: 
+350r
+Attribute 1: 1
+Attribute 2: 9
+Attribute 3: 2
+Attribute 4: 3
+Attribute 5: 0
+Card Name: 
+Vanguard
+Attribute 1: 3
+Attribute 2: 4
+Attribute 3: 5
+Attribute 4: 5
+Attribute 5: 2
+Card Name: 
+Orion
+Attribute 1: 10
+Attribute 2: 1
+Attribute 3: 6
+Attribute 4: 2
+Attribute 5: 9
+Card Name: 
+Hawk
+Attribute 1: 1
+Attribute 2: 3
+Attribute 3: 2
+Attribute 4: 4
+Attribute 5: 0
+Card Name: 
+Hawk
+Attribute 1: 1
+Attribute 2: 3
+Attribute 3: 2
+Attribute 4: 4
+Attribute 5: 0
+Card Name: 
+Avenger
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 4
+Attribute 4: 3
+Attribute 5: 2
+Card Name: 
+Sabre
+Attribute 1: 2
+Attribute 2: 7
+Attribute 3: 2
+Attribute 4: 5
+Attribute 5: 0
+Card Name: 
+350r
+Attribute 1: 1
+Attribute 2: 9
+Attribute 3: 2
+Attribute 4: 3
+Attribute 5: 0
+Card Name: 
+Merchantman
+Attribute 1: 7
+Attribute 2: 3
+Attribute 3: 5
+Attribute 4: 6
+Attribute 5: 8
+Card Name: 
+Merchantman
+Attribute 1: 7
+Attribute 2: 3
+Attribute 3: 5
+Attribute 4: 6
+Attribute 5: 8
+Card Name: 
+m50
+Attribute 1: 1
+Attribute 2: 10
+Attribute 3: 2
+Attribute 4: 2
+Attribute 5: 0
+Card Name: 
+Orion
+Attribute 1: 10
+Attribute 2: 1
+Attribute 3: 6
+Attribute 4: 2
+Attribute 5: 9
+Card Name: 
+Hawk
+Attribute 1: 1
+Attribute 2: 3
+Attribute 3: 2
+Attribute 4: 4
+Attribute 5: 0
+
+These are the player decks:
+
+ 
+Player1
+CardID: 36
+CardID: 6
+CardID: 4
+CardID: 15
+CardID: 21
+CardID: 30
+CardID: 31
+CardID: 23
+Player2
+CardID: 19
+CardID: 9
+CardID: 33
+CardID: 13
+CardID: 25
+CardID: 39
+CardID: 5
+CardID: 10
+Player3
+CardID: 2
+CardID: 22
+CardID: 7
+CardID: 32
+CardID: 20
+CardID: 14
+CardID: 40
+CardID: 35
+Player4
+CardID: 16
+CardID: 3
+CardID: 12
+CardID: 28
+CardID: 17
+CardID: 26
+CardID: 38
+CardID: 24
+Player5
+CardID: 29
+CardID: 8
+CardID: 11
+CardID: 27
+CardID: 34
+CardID: 37
+CardID: 1
+CardID: 18
+
+------------------------
+These are the cards played this round:
+
+ 
+ROUND: 0
+
+These are the cards played this round:
+
+ 
+ROUND: 0
+
+These are the cards played this round:
+
+ 
+ROUND: 0
+
+These are the cards played this round:
+
+ 
+ROUND: 0
+
+These are the cards played this round:
+
+ 
+ROUND: 0
+
+These are the cards played this round:
+
+ 
+ROUND: 0
+
+This is the original loaded deck:
+
+ 
+CardID	Description	Size	Speed	Range	Firepower	Cargo	
+1	350r	1	9	2	3	0	
+2	Avenger	2	5	4	3	2	
+3	Carrack	6	2	10	4	6	
+4	Constellation	4	5	7	3	4	
+5	Hawk	1	3	2	4	0	
+6	Hornet	2	5	3	4	1	
+7	Hurricane	2	5	3	5	0	
+8	Idris	8	2	7	10	6	
+9	m50	1	10	2	2	0	
+10	Merchantman	7	3	5	6	8	
+11	Orion	10	1	6	2	9	
+12	Sabre	2	7	2	5	0	
+13	Vanguard	3	4	5	5	2	
+14	350r	1	9	2	3	0	
+15	Avenger	2	5	4	3	2	
+16	Carrack	6	2	10	4	6	
+17	Constellation	4	5	7	3	4	
+18	Hawk	1	3	2	4	0	
+19	Hornet	2	5	3	4	1	
+20	Hurricane	2	5	3	5	0	
+21	Idris	8	2	7	10	6	
+22	m50	1	10	2	2	0	
+23	Merchantman	7	3	5	6	8	
+24	Orion	10	1	6	2	9	
+25	Sabre	2	7	2	5	0	
+26	Vanguard	3	4	5	5	2	
+27	350r	1	9	2	3	0	
+28	Avenger	2	5	4	3	2	
+29	Carrack	6	2	10	4	6	
+30	Constellation	4	5	7	3	4	
+31	Hawk	1	3	2	4	0	
+32	Hornet	2	5	3	4	1	
+33	Hurricane	2	5	3	5	0	
+34	Idris	8	2	7	10	6	
+35	m50	1	10	2	2	0	
+36	Merchantman	7	3	5	6	8	
+37	Orion	10	1	6	2	9	
+38	Sabre	2	7	2	5	0	
+39	Vanguard	3	4	5	5	2	
+40	Avenger	2	5	4	3	2	
+
+This is the shuffled deck:
+
+ 
+ROUND: 0
+Card Name: 
+Hornet
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 3
+Attribute 4: 4
+Attribute 5: 1
+Card Name: 
+350r
+Attribute 1: 1
+Attribute 2: 9
+Attribute 3: 2
+Attribute 4: 3
+Attribute 5: 0
+Card Name: 
+350r
+Attribute 1: 1
+Attribute 2: 9
+Attribute 3: 2
+Attribute 4: 3
+Attribute 5: 0
+Card Name: 
+Orion
+Attribute 1: 10
+Attribute 2: 1
+Attribute 3: 6
+Attribute 4: 2
+Attribute 5: 9
+Card Name: 
+Hornet
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 3
+Attribute 4: 4
+Attribute 5: 1
+Card Name: 
+Avenger
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 4
+Attribute 4: 3
+Attribute 5: 2
+Card Name: 
+Orion
+Attribute 1: 10
+Attribute 2: 1
+Attribute 3: 6
+Attribute 4: 2
+Attribute 5: 9
+Card Name: 
+Idris
+Attribute 1: 8
+Attribute 2: 2
+Attribute 3: 7
+Attribute 4: 10
+Attribute 5: 6
+Card Name: 
+Hurricane
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 3
+Attribute 4: 5
+Attribute 5: 0
+Card Name: 
+Avenger
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 4
+Attribute 4: 3
+Attribute 5: 2
+Card Name: 
+350r
+Attribute 1: 1
+Attribute 2: 9
+Attribute 3: 2
+Attribute 4: 3
+Attribute 5: 0
+Card Name: 
+Hawk
+Attribute 1: 1
+Attribute 2: 3
+Attribute 3: 2
+Attribute 4: 4
+Attribute 5: 0
+Card Name: 
+Merchantman
+Attribute 1: 7
+Attribute 2: 3
+Attribute 3: 5
+Attribute 4: 6
+Attribute 5: 8
+Card Name: 
+Constellation
+Attribute 1: 4
+Attribute 2: 5
+Attribute 3: 7
+Attribute 4: 3
+Attribute 5: 4
+Card Name: 
+Idris
+Attribute 1: 8
+Attribute 2: 2
+Attribute 3: 7
+Attribute 4: 10
+Attribute 5: 6
+Card Name: 
+Carrack
+Attribute 1: 6
+Attribute 2: 2
+Attribute 3: 10
+Attribute 4: 4
+Attribute 5: 6
+Card Name: 
+Constellation
+Attribute 1: 4
+Attribute 2: 5
+Attribute 3: 7
+Attribute 4: 3
+Attribute 5: 4
+Card Name: 
+Hornet
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 3
+Attribute 4: 4
+Attribute 5: 1
+Card Name: 
+Vanguard
+Attribute 1: 3
+Attribute 2: 4
+Attribute 3: 5
+Attribute 4: 5
+Attribute 5: 2
+Card Name: 
+Idris
+Attribute 1: 8
+Attribute 2: 2
+Attribute 3: 7
+Attribute 4: 10
+Attribute 5: 6
+Card Name: 
+Sabre
+Attribute 1: 2
+Attribute 2: 7
+Attribute 3: 2
+Attribute 4: 5
+Attribute 5: 0
+Card Name: 
+Hurricane
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 3
+Attribute 4: 5
+Attribute 5: 0
+Card Name: 
+Hurricane
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 3
+Attribute 4: 5
+Attribute 5: 0
+Card Name: 
+Hawk
+Attribute 1: 1
+Attribute 2: 3
+Attribute 3: 2
+Attribute 4: 4
+Attribute 5: 0
+Card Name: 
+Orion
+Attribute 1: 10
+Attribute 2: 1
+Attribute 3: 6
+Attribute 4: 2
+Attribute 5: 9
+Card Name: 
+Constellation
+Attribute 1: 4
+Attribute 2: 5
+Attribute 3: 7
+Attribute 4: 3
+Attribute 5: 4
+Card Name: 
+Avenger
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 4
+Attribute 4: 3
+Attribute 5: 2
+Card Name: 
+Vanguard
+Attribute 1: 3
+Attribute 2: 4
+Attribute 3: 5
+Attribute 4: 5
+Attribute 5: 2
+Card Name: 
+Sabre
+Attribute 1: 2
+Attribute 2: 7
+Attribute 3: 2
+Attribute 4: 5
+Attribute 5: 0
+Card Name: 
+Hawk
+Attribute 1: 1
+Attribute 2: 3
+Attribute 3: 2
+Attribute 4: 4
+Attribute 5: 0
+Card Name: 
+m50
+Attribute 1: 1
+Attribute 2: 10
+Attribute 3: 2
+Attribute 4: 2
+Attribute 5: 0
+Card Name: 
+Sabre
+Attribute 1: 2
+Attribute 2: 7
+Attribute 3: 2
+Attribute 4: 5
+Attribute 5: 0
+Card Name: 
+m50
+Attribute 1: 1
+Attribute 2: 10
+Attribute 3: 2
+Attribute 4: 2
+Attribute 5: 0
+Card Name: 
+Merchantman
+Attribute 1: 7
+Attribute 2: 3
+Attribute 3: 5
+Attribute 4: 6
+Attribute 5: 8
+Card Name: 
+Carrack
+Attribute 1: 6
+Attribute 2: 2
+Attribute 3: 10
+Attribute 4: 4
+Attribute 5: 6
+Card Name: 
+Carrack
+Attribute 1: 6
+Attribute 2: 2
+Attribute 3: 10
+Attribute 4: 4
+Attribute 5: 6
+Card Name: 
+Avenger
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 4
+Attribute 4: 3
+Attribute 5: 2
+Card Name: 
+m50
+Attribute 1: 1
+Attribute 2: 10
+Attribute 3: 2
+Attribute 4: 2
+Attribute 5: 0
+Card Name: 
+Vanguard
+Attribute 1: 3
+Attribute 2: 4
+Attribute 3: 5
+Attribute 4: 5
+Attribute 5: 2
+Card Name: 
+Merchantman
+Attribute 1: 7
+Attribute 2: 3
+Attribute 3: 5
+Attribute 4: 6
+Attribute 5: 8
+
+These are the player decks:
+
+ 
+Player1
+CardID: 19
+CardID: 32
+CardID: 33
+CardID: 10
+CardID: 17
+CardID: 38
+CardID: 11
+CardID: 12
+CardID: 22
+CardID: 15
+Player2
+CardID: 14
+CardID: 40
+CardID: 28
+CardID: 4
+CardID: 6
+CardID: 7
+CardID: 30
+CardID: 31
+CardID: 36
+CardID: 9
+Player3
+CardID: 27
+CardID: 37
+CardID: 1
+CardID: 8
+CardID: 13
+CardID: 20
+CardID: 2
+CardID: 35
+CardID: 29
+CardID: 39
+Player4
+CardID: 24
+CardID: 21
+CardID: 18
+CardID: 3
+CardID: 34
+CardID: 5
+CardID: 26
+CardID: 25
+CardID: 16
+CardID: 23
+
+------------------------
+These are the cards played this round:
+
+ 
+ROUND: 1
+Card Name: 
+Hornet
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 3
+Attribute 4: 4
+Attribute 5: 1
+Card Name: 
+350r
+Attribute 1: 1
+Attribute 2: 9
+Attribute 3: 2
+Attribute 4: 3
+Attribute 5: 0
+Card Name: 
+350r
+Attribute 1: 1
+Attribute 2: 9
+Attribute 3: 2
+Attribute 4: 3
+Attribute 5: 0
+Card Name: 
+Orion
+Attribute 1: 10
+Attribute 2: 1
+Attribute 3: 6
+Attribute 4: 2
+Attribute 5: 9
+
+These are the contents of players' decks after a round:
+
+ 
+Player1
+CardID: 32
+CardID: 33
+CardID: 10
+CardID: 17
+CardID: 38
+CardID: 11
+CardID: 12
+CardID: 22
+CardID: 15
+Player2
+CardID: 40
+CardID: 28
+CardID: 4
+CardID: 6
+CardID: 7
+CardID: 30
+CardID: 31
+CardID: 36
+CardID: 9
+Player3
+CardID: 37
+CardID: 1
+CardID: 8
+CardID: 13
+CardID: 20
+CardID: 2
+CardID: 35
+CardID: 29
+CardID: 39
+Player4
+CardID: 21
+CardID: 18
+CardID: 3
+CardID: 34
+CardID: 5
+CardID: 26
+CardID: 25
+CardID: 16
+CardID: 23
+CardID: 19
+CardID: 14
+CardID: 27
+CardID: 24
+
+------------------------
+These are the cards played this round:
+
+ 
+ROUND: 2
+Card Name: 
+Hornet
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 3
+Attribute 4: 4
+Attribute 5: 1
+Card Name: 
+Avenger
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 4
+Attribute 4: 3
+Attribute 5: 2
+Card Name: 
+Orion
+Attribute 1: 10
+Attribute 2: 1
+Attribute 3: 6
+Attribute 4: 2
+Attribute 5: 9
+Card Name: 
+Idris
+Attribute 1: 8
+Attribute 2: 2
+Attribute 3: 7
+Attribute 4: 10
+Attribute 5: 6
+
+These are the contents of players' decks after a round:
+
+ 
+Player1
+CardID: 33
+CardID: 10
+CardID: 17
+CardID: 38
+CardID: 11
+CardID: 12
+CardID: 22
+CardID: 15
+Player2
+CardID: 28
+CardID: 4
+CardID: 6
+CardID: 7
+CardID: 30
+CardID: 31
+CardID: 36
+CardID: 9
+Player3
+CardID: 1
+CardID: 8
+CardID: 13
+CardID: 20
+CardID: 2
+CardID: 35
+CardID: 29
+CardID: 39
+Player4
+CardID: 18
+CardID: 3
+CardID: 34
+CardID: 5
+CardID: 26
+CardID: 25
+CardID: 16
+CardID: 23
+CardID: 19
+CardID: 14
+CardID: 27
+CardID: 24
+CardID: 32
+CardID: 40
+CardID: 37
+CardID: 21
+
+------------------------
+These are the cards played this round:
+
+ 
+ROUND: 3
+Card Name: 
+Hurricane
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 3
+Attribute 4: 5
+Attribute 5: 0
+Card Name: 
+Avenger
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 4
+Attribute 4: 3
+Attribute 5: 2
+Card Name: 
+350r
+Attribute 1: 1
+Attribute 2: 9
+Attribute 3: 2
+Attribute 4: 3
+Attribute 5: 0
+Card Name: 
+Hawk
+Attribute 1: 1
+Attribute 2: 3
+Attribute 3: 2
+Attribute 4: 4
+Attribute 5: 0
+
+This is the drawPile:
+
+ 
+ROUND: 3
+Card Name: 
+Hurricane
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 3
+Attribute 4: 5
+Attribute 5: 0
+Card Name: 
+Avenger
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 4
+Attribute 4: 3
+Attribute 5: 2
+Card Name: 
+350r
+Attribute 1: 1
+Attribute 2: 9
+Attribute 3: 2
+Attribute 4: 3
+Attribute 5: 0
+Card Name: 
+Hawk
+Attribute 1: 1
+Attribute 2: 3
+Attribute 3: 2
+Attribute 4: 4
+Attribute 5: 0
+
+These are the contents of players' decks after a round:
+
+ 
+Player1
+CardID: 10
+CardID: 17
+CardID: 38
+CardID: 11
+CardID: 12
+CardID: 22
+CardID: 15
+Player2
+CardID: 4
+CardID: 6
+CardID: 7
+CardID: 30
+CardID: 31
+CardID: 36
+CardID: 9
+Player3
+CardID: 8
+CardID: 13
+CardID: 20
+CardID: 2
+CardID: 35
+CardID: 29
+CardID: 39
+Player4
+CardID: 3
+CardID: 34
+CardID: 5
+CardID: 26
+CardID: 25
+CardID: 16
+CardID: 23
+CardID: 19
+CardID: 14
+CardID: 27
+CardID: 24
+CardID: 32
+CardID: 40
+CardID: 37
+CardID: 21
+
+------------------------
+These are the cards played this round:
+
+ 
+ROUND: 4
+Card Name: 
+Merchantman
+Attribute 1: 7
+Attribute 2: 3
+Attribute 3: 5
+Attribute 4: 6
+Attribute 5: 8
+Card Name: 
+Constellation
+Attribute 1: 4
+Attribute 2: 5
+Attribute 3: 7
+Attribute 4: 3
+Attribute 5: 4
+Card Name: 
+Idris
+Attribute 1: 8
+Attribute 2: 2
+Attribute 3: 7
+Attribute 4: 10
+Attribute 5: 6
+Card Name: 
+Carrack
+Attribute 1: 6
+Attribute 2: 2
+Attribute 3: 10
+Attribute 4: 4
+Attribute 5: 6
+
+This is the drawPile:
+
+ 
+ROUND: 4
+
+These are the contents of players' decks after a round:
+
+ 
+Player1
+CardID: 17
+CardID: 38
+CardID: 11
+CardID: 12
+CardID: 22
+CardID: 15
+Player2
+CardID: 6
+CardID: 7
+CardID: 30
+CardID: 31
+CardID: 36
+CardID: 9
+Player3
+CardID: 13
+CardID: 20
+CardID: 2
+CardID: 35
+CardID: 29
+CardID: 39
+CardID: 10
+CardID: 4
+CardID: 8
+CardID: 3
+CardID: 33
+CardID: 28
+CardID: 1
+CardID: 18
+Player4
+CardID: 34
+CardID: 5
+CardID: 26
+CardID: 25
+CardID: 16
+CardID: 23
+CardID: 19
+CardID: 14
+CardID: 27
+CardID: 24
+CardID: 32
+CardID: 40
+CardID: 37
+CardID: 21
+
+------------------------
+These are the cards played this round:
+
+ 
+ROUND: 5
+Card Name: 
+Constellation
+Attribute 1: 4
+Attribute 2: 5
+Attribute 3: 7
+Attribute 4: 3
+Attribute 5: 4
+Card Name: 
+Hornet
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 3
+Attribute 4: 4
+Attribute 5: 1
+Card Name: 
+Vanguard
+Attribute 1: 3
+Attribute 2: 4
+Attribute 3: 5
+Attribute 4: 5
+Attribute 5: 2
+Card Name: 
+Idris
+Attribute 1: 8
+Attribute 2: 2
+Attribute 3: 7
+Attribute 4: 10
+Attribute 5: 6
+
+These are the contents of players' decks after a round:
+
+ 
+Player1
+CardID: 38
+CardID: 11
+CardID: 12
+CardID: 22
+CardID: 15
+Player2
+CardID: 7
+CardID: 30
+CardID: 31
+CardID: 36
+CardID: 9
+Player3
+CardID: 20
+CardID: 2
+CardID: 35
+CardID: 29
+CardID: 39
+CardID: 10
+CardID: 4
+CardID: 8
+CardID: 3
+CardID: 33
+CardID: 28
+CardID: 1
+CardID: 18
+Player4
+CardID: 5
+CardID: 26
+CardID: 25
+CardID: 16
+CardID: 23
+CardID: 19
+CardID: 14
+CardID: 27
+CardID: 24
+CardID: 32
+CardID: 40
+CardID: 37
+CardID: 21
+CardID: 17
+CardID: 6
+CardID: 13
+CardID: 34
+
+------------------------
+These are the cards played this round:
+
+ 
+ROUND: 6
+Card Name: 
+Sabre
+Attribute 1: 2
+Attribute 2: 7
+Attribute 3: 2
+Attribute 4: 5
+Attribute 5: 0
+Card Name: 
+Hurricane
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 3
+Attribute 4: 5
+Attribute 5: 0
+Card Name: 
+Hurricane
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 3
+Attribute 4: 5
+Attribute 5: 0
+Card Name: 
+Hawk
+Attribute 1: 1
+Attribute 2: 3
+Attribute 3: 2
+Attribute 4: 4
+Attribute 5: 0
+
+This is the drawPile:
+
+ 
+ROUND: 6
+Card Name: 
+Sabre
+Attribute 1: 2
+Attribute 2: 7
+Attribute 3: 2
+Attribute 4: 5
+Attribute 5: 0
+Card Name: 
+Hurricane
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 3
+Attribute 4: 5
+Attribute 5: 0
+Card Name: 
+Hurricane
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 3
+Attribute 4: 5
+Attribute 5: 0
+Card Name: 
+Hawk
+Attribute 1: 1
+Attribute 2: 3
+Attribute 3: 2
+Attribute 4: 4
+Attribute 5: 0
+
+These are the contents of players' decks after a round:
+
+ 
+Player1
+CardID: 11
+CardID: 12
+CardID: 22
+CardID: 15
+Player2
+CardID: 30
+CardID: 31
+CardID: 36
+CardID: 9
+Player3
+CardID: 2
+CardID: 35
+CardID: 29
+CardID: 39
+CardID: 10
+CardID: 4
+CardID: 8
+CardID: 3
+CardID: 33
+CardID: 28
+CardID: 1
+CardID: 18
+Player4
+CardID: 26
+CardID: 25
+CardID: 16
+CardID: 23
+CardID: 19
+CardID: 14
+CardID: 27
+CardID: 24
+CardID: 32
+CardID: 40
+CardID: 37
+CardID: 21
+CardID: 17
+CardID: 6
+CardID: 13
+CardID: 34
+
+------------------------
+These are the cards played this round:
+
+ 
+ROUND: 7
+Card Name: 
+Orion
+Attribute 1: 10
+Attribute 2: 1
+Attribute 3: 6
+Attribute 4: 2
+Attribute 5: 9
+Card Name: 
+Constellation
+Attribute 1: 4
+Attribute 2: 5
+Attribute 3: 7
+Attribute 4: 3
+Attribute 5: 4
+Card Name: 
+Avenger
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 4
+Attribute 4: 3
+Attribute 5: 2
+Card Name: 
+Vanguard
+Attribute 1: 3
+Attribute 2: 4
+Attribute 3: 5
+Attribute 4: 5
+Attribute 5: 2
+
+This is the drawPile:
+
+ 
+ROUND: 7
+
+These are the contents of players' decks after a round:
+
+ 
+Player1
+CardID: 12
+CardID: 22
+CardID: 15
+Player2
+CardID: 31
+CardID: 36
+CardID: 9
+Player3
+CardID: 35
+CardID: 29
+CardID: 39
+CardID: 10
+CardID: 4
+CardID: 8
+CardID: 3
+CardID: 33
+CardID: 28
+CardID: 1
+CardID: 18
+Player4
+CardID: 25
+CardID: 16
+CardID: 23
+CardID: 19
+CardID: 14
+CardID: 27
+CardID: 24
+CardID: 32
+CardID: 40
+CardID: 37
+CardID: 21
+CardID: 17
+CardID: 6
+CardID: 13
+CardID: 34
+CardID: 11
+CardID: 30
+CardID: 2
+CardID: 26
+CardID: 38
+CardID: 7
+CardID: 20
+CardID: 5
+
+------------------------
+These are the cards played this round:
+
+ 
+ROUND: 8
+Card Name: 
+Sabre
+Attribute 1: 2
+Attribute 2: 7
+Attribute 3: 2
+Attribute 4: 5
+Attribute 5: 0
+Card Name: 
+Hawk
+Attribute 1: 1
+Attribute 2: 3
+Attribute 3: 2
+Attribute 4: 4
+Attribute 5: 0
+Card Name: 
+m50
+Attribute 1: 1
+Attribute 2: 10
+Attribute 3: 2
+Attribute 4: 2
+Attribute 5: 0
+Card Name: 
+Sabre
+Attribute 1: 2
+Attribute 2: 7
+Attribute 3: 2
+Attribute 4: 5
+Attribute 5: 0
+
+This is the drawPile:
+
+ 
+ROUND: 8
+Card Name: 
+Sabre
+Attribute 1: 2
+Attribute 2: 7
+Attribute 3: 2
+Attribute 4: 5
+Attribute 5: 0
+Card Name: 
+Hawk
+Attribute 1: 1
+Attribute 2: 3
+Attribute 3: 2
+Attribute 4: 4
+Attribute 5: 0
+Card Name: 
+m50
+Attribute 1: 1
+Attribute 2: 10
+Attribute 3: 2
+Attribute 4: 2
+Attribute 5: 0
+Card Name: 
+Sabre
+Attribute 1: 2
+Attribute 2: 7
+Attribute 3: 2
+Attribute 4: 5
+Attribute 5: 0
+
+These are the contents of players' decks after a round:
+
+ 
+Player1
+CardID: 22
+CardID: 15
+Player2
+CardID: 36
+CardID: 9
+Player3
+CardID: 29
+CardID: 39
+CardID: 10
+CardID: 4
+CardID: 8
+CardID: 3
+CardID: 33
+CardID: 28
+CardID: 1
+CardID: 18
+Player4
+CardID: 16
+CardID: 23
+CardID: 19
+CardID: 14
+CardID: 27
+CardID: 24
+CardID: 32
+CardID: 40
+CardID: 37
+CardID: 21
+CardID: 17
+CardID: 6
+CardID: 13
+CardID: 34
+CardID: 11
+CardID: 30
+CardID: 2
+CardID: 26
+CardID: 38
+CardID: 7
+CardID: 20
+CardID: 5
+
+------------------------
+These are the cards played this round:
+
+ 
+ROUND: 9
+Card Name: 
+m50
+Attribute 1: 1
+Attribute 2: 10
+Attribute 3: 2
+Attribute 4: 2
+Attribute 5: 0
+Card Name: 
+Merchantman
+Attribute 1: 7
+Attribute 2: 3
+Attribute 3: 5
+Attribute 4: 6
+Attribute 5: 8
+Card Name: 
+Carrack
+Attribute 1: 6
+Attribute 2: 2
+Attribute 3: 10
+Attribute 4: 4
+Attribute 5: 6
+Card Name: 
+Carrack
+Attribute 1: 6
+Attribute 2: 2
+Attribute 3: 10
+Attribute 4: 4
+Attribute 5: 6
+
+This is the drawPile:
+
+ 
+ROUND: 9
+Card Name: 
+Sabre
+Attribute 1: 2
+Attribute 2: 7
+Attribute 3: 2
+Attribute 4: 5
+Attribute 5: 0
+Card Name: 
+Hawk
+Attribute 1: 1
+Attribute 2: 3
+Attribute 3: 2
+Attribute 4: 4
+Attribute 5: 0
+Card Name: 
+m50
+Attribute 1: 1
+Attribute 2: 10
+Attribute 3: 2
+Attribute 4: 2
+Attribute 5: 0
+Card Name: 
+Sabre
+Attribute 1: 2
+Attribute 2: 7
+Attribute 3: 2
+Attribute 4: 5
+Attribute 5: 0
+Card Name: 
+m50
+Attribute 1: 1
+Attribute 2: 10
+Attribute 3: 2
+Attribute 4: 2
+Attribute 5: 0
+Card Name: 
+Merchantman
+Attribute 1: 7
+Attribute 2: 3
+Attribute 3: 5
+Attribute 4: 6
+Attribute 5: 8
+Card Name: 
+Carrack
+Attribute 1: 6
+Attribute 2: 2
+Attribute 3: 10
+Attribute 4: 4
+Attribute 5: 6
+Card Name: 
+Carrack
+Attribute 1: 6
+Attribute 2: 2
+Attribute 3: 10
+Attribute 4: 4
+Attribute 5: 6
+
+These are the contents of players' decks after a round:
+
+ 
+Player1
+CardID: 15
+Player2
+CardID: 9
+Player3
+CardID: 39
+CardID: 10
+CardID: 4
+CardID: 8
+CardID: 3
+CardID: 33
+CardID: 28
+CardID: 1
+CardID: 18
+Player4
+CardID: 23
+CardID: 19
+CardID: 14
+CardID: 27
+CardID: 24
+CardID: 32
+CardID: 40
+CardID: 37
+CardID: 21
+CardID: 17
+CardID: 6
+CardID: 13
+CardID: 34
+CardID: 11
+CardID: 30
+CardID: 2
+CardID: 26
+CardID: 38
+CardID: 7
+CardID: 20
+CardID: 5
+
+------------------------
+These are the cards played this round:
+
+ 
+ROUND: 10
+Card Name: 
+Avenger
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 4
+Attribute 4: 3
+Attribute 5: 2
+Card Name: 
+m50
+Attribute 1: 1
+Attribute 2: 10
+Attribute 3: 2
+Attribute 4: 2
+Attribute 5: 0
+Card Name: 
+Vanguard
+Attribute 1: 3
+Attribute 2: 4
+Attribute 3: 5
+Attribute 4: 5
+Attribute 5: 2
+Card Name: 
+Merchantman
+Attribute 1: 7
+Attribute 2: 3
+Attribute 3: 5
+Attribute 4: 6
+Attribute 5: 8
+
+This is the drawPile:
+
+ 
+ROUND: 10
+
+These are the contents of players' decks after a round:
+
+ 
+Player1
+Player2
+CardID: 15
+CardID: 9
+CardID: 39
+CardID: 23
+CardID: 12
+CardID: 31
+CardID: 35
+CardID: 25
+CardID: 22
+CardID: 36
+CardID: 29
+CardID: 16
+Player3
+CardID: 10
+CardID: 4
+CardID: 8
+CardID: 3
+CardID: 33
+CardID: 28
+CardID: 1
+CardID: 18
+Player4
+CardID: 19
+CardID: 14
+CardID: 27
+CardID: 24
+CardID: 32
+CardID: 40
+CardID: 37
+CardID: 21
+CardID: 17
+CardID: 6
+CardID: 13
+CardID: 34
+CardID: 11
+CardID: 30
+CardID: 2
+CardID: 26
+CardID: 38
+CardID: 7
+CardID: 20
+CardID: 5
+
+------------------------
+These are the cards played this round:
+
+ 
+ROUND: 11
+Card Name: 
+Avenger
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 4
+Attribute 4: 3
+Attribute 5: 2
+Card Name: 
+Merchantman
+Attribute 1: 7
+Attribute 2: 3
+Attribute 3: 5
+Attribute 4: 6
+Attribute 5: 8
+Card Name: 
+Hornet
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 3
+Attribute 4: 4
+Attribute 5: 1
+
+These are the contents of players' decks after a round:
+
+ 
+Player1
+CardID: 9
+CardID: 39
+CardID: 23
+CardID: 12
+CardID: 31
+CardID: 35
+CardID: 25
+CardID: 22
+CardID: 36
+CardID: 29
+CardID: 16
+Player2
+CardID: 4
+CardID: 8
+CardID: 3
+CardID: 33
+CardID: 28
+CardID: 1
+CardID: 18
+CardID: 15
+CardID: 10
+CardID: 19
+Player3
+CardID: 14
+CardID: 27
+CardID: 24
+CardID: 32
+CardID: 40
+CardID: 37
+CardID: 21
+CardID: 17
+CardID: 6
+CardID: 13
+CardID: 34
+CardID: 11
+CardID: 30
+CardID: 2
+CardID: 26
+CardID: 38
+CardID: 7
+CardID: 20
+CardID: 5
+
+------------------------
+These are the cards played this round:
+
+ 
+ROUND: 12
+Card Name: 
+m50
+Attribute 1: 1
+Attribute 2: 10
+Attribute 3: 2
+Attribute 4: 2
+Attribute 5: 0
+Card Name: 
+Constellation
+Attribute 1: 4
+Attribute 2: 5
+Attribute 3: 7
+Attribute 4: 3
+Attribute 5: 4
+Card Name: 
+350r
+Attribute 1: 1
+Attribute 2: 9
+Attribute 3: 2
+Attribute 4: 3
+Attribute 5: 0
+
+These are the contents of players' decks after a round:
+
+ 
+Player1
+CardID: 39
+CardID: 23
+CardID: 12
+CardID: 31
+CardID: 35
+CardID: 25
+CardID: 22
+CardID: 36
+CardID: 29
+CardID: 16
+Player2
+CardID: 8
+CardID: 3
+CardID: 33
+CardID: 28
+CardID: 1
+CardID: 18
+CardID: 15
+CardID: 10
+CardID: 19
+CardID: 9
+CardID: 4
+CardID: 14
+Player3
+CardID: 27
+CardID: 24
+CardID: 32
+CardID: 40
+CardID: 37
+CardID: 21
+CardID: 17
+CardID: 6
+CardID: 13
+CardID: 34
+CardID: 11
+CardID: 30
+CardID: 2
+CardID: 26
+CardID: 38
+CardID: 7
+CardID: 20
+CardID: 5
+
+------------------------
+These are the cards played this round:
+
+ 
+ROUND: 13
+Card Name: 
+Vanguard
+Attribute 1: 3
+Attribute 2: 4
+Attribute 3: 5
+Attribute 4: 5
+Attribute 5: 2
+Card Name: 
+Idris
+Attribute 1: 8
+Attribute 2: 2
+Attribute 3: 7
+Attribute 4: 10
+Attribute 5: 6
+Card Name: 
+350r
+Attribute 1: 1
+Attribute 2: 9
+Attribute 3: 2
+Attribute 4: 3
+Attribute 5: 0
+
+These are the contents of players' decks after a round:
+
+ 
+Player1
+CardID: 23
+CardID: 12
+CardID: 31
+CardID: 35
+CardID: 25
+CardID: 22
+CardID: 36
+CardID: 29
+CardID: 16
+Player2
+CardID: 3
+CardID: 33
+CardID: 28
+CardID: 1
+CardID: 18
+CardID: 15
+CardID: 10
+CardID: 19
+CardID: 9
+CardID: 4
+CardID: 14
+CardID: 39
+CardID: 8
+CardID: 27
+Player3
+CardID: 24
+CardID: 32
+CardID: 40
+CardID: 37
+CardID: 21
+CardID: 17
+CardID: 6
+CardID: 13
+CardID: 34
+CardID: 11
+CardID: 30
+CardID: 2
+CardID: 26
+CardID: 38
+CardID: 7
+CardID: 20
+CardID: 5
+
+------------------------
+These are the cards played this round:
+
+ 
+ROUND: 14
+Card Name: 
+Merchantman
+Attribute 1: 7
+Attribute 2: 3
+Attribute 3: 5
+Attribute 4: 6
+Attribute 5: 8
+Card Name: 
+Carrack
+Attribute 1: 6
+Attribute 2: 2
+Attribute 3: 10
+Attribute 4: 4
+Attribute 5: 6
+Card Name: 
+Orion
+Attribute 1: 10
+Attribute 2: 1
+Attribute 3: 6
+Attribute 4: 2
+Attribute 5: 9
+
+These are the contents of players' decks after a round:
+
+ 
+Player1
+CardID: 12
+CardID: 31
+CardID: 35
+CardID: 25
+CardID: 22
+CardID: 36
+CardID: 29
+CardID: 16
+Player2
+CardID: 33
+CardID: 28
+CardID: 1
+CardID: 18
+CardID: 15
+CardID: 10
+CardID: 19
+CardID: 9
+CardID: 4
+CardID: 14
+CardID: 39
+CardID: 8
+CardID: 27
+Player3
+CardID: 32
+CardID: 40
+CardID: 37
+CardID: 21
+CardID: 17
+CardID: 6
+CardID: 13
+CardID: 34
+CardID: 11
+CardID: 30
+CardID: 2
+CardID: 26
+CardID: 38
+CardID: 7
+CardID: 20
+CardID: 5
+CardID: 23
+CardID: 3
+CardID: 24
+
+------------------------
+These are the cards played this round:
+
+ 
+ROUND: 15
+Card Name: 
+Sabre
+Attribute 1: 2
+Attribute 2: 7
+Attribute 3: 2
+Attribute 4: 5
+Attribute 5: 0
+Card Name: 
+Hurricane
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 3
+Attribute 4: 5
+Attribute 5: 0
+Card Name: 
+Hornet
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 3
+Attribute 4: 4
+Attribute 5: 1
+
+These are the contents of players' decks after a round:
+
+ 
+Player1
+CardID: 31
+CardID: 35
+CardID: 25
+CardID: 22
+CardID: 36
+CardID: 29
+CardID: 16
+CardID: 12
+CardID: 33
+CardID: 32
+Player2
+CardID: 28
+CardID: 1
+CardID: 18
+CardID: 15
+CardID: 10
+CardID: 19
+CardID: 9
+CardID: 4
+CardID: 14
+CardID: 39
+CardID: 8
+CardID: 27
+Player3
+CardID: 40
+CardID: 37
+CardID: 21
+CardID: 17
+CardID: 6
+CardID: 13
+CardID: 34
+CardID: 11
+CardID: 30
+CardID: 2
+CardID: 26
+CardID: 38
+CardID: 7
+CardID: 20
+CardID: 5
+CardID: 23
+CardID: 3
+CardID: 24
+
+------------------------
+These are the cards played this round:
+
+ 
+ROUND: 16
+Card Name: 
+Hawk
+Attribute 1: 1
+Attribute 2: 3
+Attribute 3: 2
+Attribute 4: 4
+Attribute 5: 0
+Card Name: 
+Avenger
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 4
+Attribute 4: 3
+Attribute 5: 2
+Card Name: 
+Avenger
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 4
+Attribute 4: 3
+Attribute 5: 2
+
+This is the drawPile:
+
+ 
+ROUND: 16
+Card Name: 
+Hawk
+Attribute 1: 1
+Attribute 2: 3
+Attribute 3: 2
+Attribute 4: 4
+Attribute 5: 0
+Card Name: 
+Avenger
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 4
+Attribute 4: 3
+Attribute 5: 2
+Card Name: 
+Avenger
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 4
+Attribute 4: 3
+Attribute 5: 2
+
+These are the contents of players' decks after a round:
+
+ 
+Player1
+CardID: 35
+CardID: 25
+CardID: 22
+CardID: 36
+CardID: 29
+CardID: 16
+CardID: 12
+CardID: 33
+CardID: 32
+Player2
+CardID: 1
+CardID: 18
+CardID: 15
+CardID: 10
+CardID: 19
+CardID: 9
+CardID: 4
+CardID: 14
+CardID: 39
+CardID: 8
+CardID: 27
+Player3
+CardID: 37
+CardID: 21
+CardID: 17
+CardID: 6
+CardID: 13
+CardID: 34
+CardID: 11
+CardID: 30
+CardID: 2
+CardID: 26
+CardID: 38
+CardID: 7
+CardID: 20
+CardID: 5
+CardID: 23
+CardID: 3
+CardID: 24
+
+------------------------
+These are the cards played this round:
+
+ 
+ROUND: 17
+Card Name: 
+m50
+Attribute 1: 1
+Attribute 2: 10
+Attribute 3: 2
+Attribute 4: 2
+Attribute 5: 0
+Card Name: 
+350r
+Attribute 1: 1
+Attribute 2: 9
+Attribute 3: 2
+Attribute 4: 3
+Attribute 5: 0
+Card Name: 
+Orion
+Attribute 1: 10
+Attribute 2: 1
+Attribute 3: 6
+Attribute 4: 2
+Attribute 5: 9
+
+This is the drawPile:
+
+ 
+ROUND: 17
+
+These are the contents of players' decks after a round:
+
+ 
+Player1
+CardID: 25
+CardID: 22
+CardID: 36
+CardID: 29
+CardID: 16
+CardID: 12
+CardID: 33
+CardID: 32
+Player2
+CardID: 18
+CardID: 15
+CardID: 10
+CardID: 19
+CardID: 9
+CardID: 4
+CardID: 14
+CardID: 39
+CardID: 8
+CardID: 27
+Player3
+CardID: 21
+CardID: 17
+CardID: 6
+CardID: 13
+CardID: 34
+CardID: 11
+CardID: 30
+CardID: 2
+CardID: 26
+CardID: 38
+CardID: 7
+CardID: 20
+CardID: 5
+CardID: 23
+CardID: 3
+CardID: 24
+CardID: 35
+CardID: 1
+CardID: 37
+CardID: 31
+CardID: 28
+CardID: 40
+
+------------------------
+These are the cards played this round:
+
+ 
+ROUND: 18
+Card Name: 
+Sabre
+Attribute 1: 2
+Attribute 2: 7
+Attribute 3: 2
+Attribute 4: 5
+Attribute 5: 0
+Card Name: 
+Hawk
+Attribute 1: 1
+Attribute 2: 3
+Attribute 3: 2
+Attribute 4: 4
+Attribute 5: 0
+Card Name: 
+Idris
+Attribute 1: 8
+Attribute 2: 2
+Attribute 3: 7
+Attribute 4: 10
+Attribute 5: 6
+
+These are the contents of players' decks after a round:
+
+ 
+Player1
+CardID: 22
+CardID: 36
+CardID: 29
+CardID: 16
+CardID: 12
+CardID: 33
+CardID: 32
+Player2
+CardID: 15
+CardID: 10
+CardID: 19
+CardID: 9
+CardID: 4
+CardID: 14
+CardID: 39
+CardID: 8
+CardID: 27
+Player3
+CardID: 17
+CardID: 6
+CardID: 13
+CardID: 34
+CardID: 11
+CardID: 30
+CardID: 2
+CardID: 26
+CardID: 38
+CardID: 7
+CardID: 20
+CardID: 5
+CardID: 23
+CardID: 3
+CardID: 24
+CardID: 35
+CardID: 1
+CardID: 37
+CardID: 31
+CardID: 28
+CardID: 40
+CardID: 25
+CardID: 18
+CardID: 21
+
+------------------------
+These are the cards played this round:
+
+ 
+ROUND: 19
+Card Name: 
+m50
+Attribute 1: 1
+Attribute 2: 10
+Attribute 3: 2
+Attribute 4: 2
+Attribute 5: 0
+Card Name: 
+Avenger
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 4
+Attribute 4: 3
+Attribute 5: 2
+Card Name: 
+Constellation
+Attribute 1: 4
+Attribute 2: 5
+Attribute 3: 7
+Attribute 4: 3
+Attribute 5: 4
+
+These are the contents of players' decks after a round:
+
+ 
+Player1
+CardID: 36
+CardID: 29
+CardID: 16
+CardID: 12
+CardID: 33
+CardID: 32
+Player2
+CardID: 10
+CardID: 19
+CardID: 9
+CardID: 4
+CardID: 14
+CardID: 39
+CardID: 8
+CardID: 27
+Player3
+CardID: 6
+CardID: 13
+CardID: 34
+CardID: 11
+CardID: 30
+CardID: 2
+CardID: 26
+CardID: 38
+CardID: 7
+CardID: 20
+CardID: 5
+CardID: 23
+CardID: 3
+CardID: 24
+CardID: 35
+CardID: 1
+CardID: 37
+CardID: 31
+CardID: 28
+CardID: 40
+CardID: 25
+CardID: 18
+CardID: 21
+CardID: 22
+CardID: 15
+CardID: 17
+
+------------------------
+These are the cards played this round:
+
+ 
+ROUND: 20
+Card Name: 
+Merchantman
+Attribute 1: 7
+Attribute 2: 3
+Attribute 3: 5
+Attribute 4: 6
+Attribute 5: 8
+Card Name: 
+Merchantman
+Attribute 1: 7
+Attribute 2: 3
+Attribute 3: 5
+Attribute 4: 6
+Attribute 5: 8
+Card Name: 
+Hornet
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 3
+Attribute 4: 4
+Attribute 5: 1
+
+These are the contents of players' decks after a round:
+
+ 
+Player1
+CardID: 29
+CardID: 16
+CardID: 12
+CardID: 33
+CardID: 32
+Player2
+CardID: 19
+CardID: 9
+CardID: 4
+CardID: 14
+CardID: 39
+CardID: 8
+CardID: 27
+Player3
+CardID: 13
+CardID: 34
+CardID: 11
+CardID: 30
+CardID: 2
+CardID: 26
+CardID: 38
+CardID: 7
+CardID: 20
+CardID: 5
+CardID: 23
+CardID: 3
+CardID: 24
+CardID: 35
+CardID: 1
+CardID: 37
+CardID: 31
+CardID: 28
+CardID: 40
+CardID: 25
+CardID: 18
+CardID: 21
+CardID: 22
+CardID: 15
+CardID: 17
+CardID: 36
+CardID: 10
+CardID: 6
+
+------------------------
+These are the cards played this round:
+
+ 
+ROUND: 21
+Card Name: 
+Carrack
+Attribute 1: 6
+Attribute 2: 2
+Attribute 3: 10
+Attribute 4: 4
+Attribute 5: 6
+Card Name: 
+Hornet
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 3
+Attribute 4: 4
+Attribute 5: 1
+Card Name: 
+Vanguard
+Attribute 1: 3
+Attribute 2: 4
+Attribute 3: 5
+Attribute 4: 5
+Attribute 5: 2
+
+These are the contents of players' decks after a round:
+
+ 
+Player1
+CardID: 16
+CardID: 12
+CardID: 33
+CardID: 32
+Player2
+CardID: 9
+CardID: 4
+CardID: 14
+CardID: 39
+CardID: 8
+CardID: 27
+Player3
+CardID: 34
+CardID: 11
+CardID: 30
+CardID: 2
+CardID: 26
+CardID: 38
+CardID: 7
+CardID: 20
+CardID: 5
+CardID: 23
+CardID: 3
+CardID: 24
+CardID: 35
+CardID: 1
+CardID: 37
+CardID: 31
+CardID: 28
+CardID: 40
+CardID: 25
+CardID: 18
+CardID: 21
+CardID: 22
+CardID: 15
+CardID: 17
+CardID: 36
+CardID: 10
+CardID: 6
+CardID: 29
+CardID: 19
+CardID: 13
+
+------------------------
+These are the cards played this round:
+
+ 
+ROUND: 22
+Card Name: 
+Carrack
+Attribute 1: 6
+Attribute 2: 2
+Attribute 3: 10
+Attribute 4: 4
+Attribute 5: 6
+Card Name: 
+m50
+Attribute 1: 1
+Attribute 2: 10
+Attribute 3: 2
+Attribute 4: 2
+Attribute 5: 0
+Card Name: 
+Idris
+Attribute 1: 8
+Attribute 2: 2
+Attribute 3: 7
+Attribute 4: 10
+Attribute 5: 6
+
+These are the contents of players' decks after a round:
+
+ 
+Player1
+CardID: 12
+CardID: 33
+CardID: 32
+Player2
+CardID: 4
+CardID: 14
+CardID: 39
+CardID: 8
+CardID: 27
+Player3
+CardID: 11
+CardID: 30
+CardID: 2
+CardID: 26
+CardID: 38
+CardID: 7
+CardID: 20
+CardID: 5
+CardID: 23
+CardID: 3
+CardID: 24
+CardID: 35
+CardID: 1
+CardID: 37
+CardID: 31
+CardID: 28
+CardID: 40
+CardID: 25
+CardID: 18
+CardID: 21
+CardID: 22
+CardID: 15
+CardID: 17
+CardID: 36
+CardID: 10
+CardID: 6
+CardID: 29
+CardID: 19
+CardID: 13
+CardID: 16
+CardID: 9
+CardID: 34
+
+------------------------
+These are the cards played this round:
+
+ 
+ROUND: 23
+Card Name: 
+Sabre
+Attribute 1: 2
+Attribute 2: 7
+Attribute 3: 2
+Attribute 4: 5
+Attribute 5: 0
+Card Name: 
+Constellation
+Attribute 1: 4
+Attribute 2: 5
+Attribute 3: 7
+Attribute 4: 3
+Attribute 5: 4
+Card Name: 
+Orion
+Attribute 1: 10
+Attribute 2: 1
+Attribute 3: 6
+Attribute 4: 2
+Attribute 5: 9
+
+These are the contents of players' decks after a round:
+
+ 
+Player1
+CardID: 33
+CardID: 32
+CardID: 12
+CardID: 4
+CardID: 11
+Player2
+CardID: 14
+CardID: 39
+CardID: 8
+CardID: 27
+Player3
+CardID: 30
+CardID: 2
+CardID: 26
+CardID: 38
+CardID: 7
+CardID: 20
+CardID: 5
+CardID: 23
+CardID: 3
+CardID: 24
+CardID: 35
+CardID: 1
+CardID: 37
+CardID: 31
+CardID: 28
+CardID: 40
+CardID: 25
+CardID: 18
+CardID: 21
+CardID: 22
+CardID: 15
+CardID: 17
+CardID: 36
+CardID: 10
+CardID: 6
+CardID: 29
+CardID: 19
+CardID: 13
+CardID: 16
+CardID: 9
+CardID: 34
+
+------------------------
+These are the cards played this round:
+
+ 
+ROUND: 24
+Card Name: 
+Hurricane
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 3
+Attribute 4: 5
+Attribute 5: 0
+Card Name: 
+350r
+Attribute 1: 1
+Attribute 2: 9
+Attribute 3: 2
+Attribute 4: 3
+Attribute 5: 0
+Card Name: 
+Constellation
+Attribute 1: 4
+Attribute 2: 5
+Attribute 3: 7
+Attribute 4: 3
+Attribute 5: 4
+
+These are the contents of players' decks after a round:
+
+ 
+Player1
+CardID: 32
+CardID: 12
+CardID: 4
+CardID: 11
+Player2
+CardID: 39
+CardID: 8
+CardID: 27
+Player3
+CardID: 2
+CardID: 26
+CardID: 38
+CardID: 7
+CardID: 20
+CardID: 5
+CardID: 23
+CardID: 3
+CardID: 24
+CardID: 35
+CardID: 1
+CardID: 37
+CardID: 31
+CardID: 28
+CardID: 40
+CardID: 25
+CardID: 18
+CardID: 21
+CardID: 22
+CardID: 15
+CardID: 17
+CardID: 36
+CardID: 10
+CardID: 6
+CardID: 29
+CardID: 19
+CardID: 13
+CardID: 16
+CardID: 9
+CardID: 34
+CardID: 33
+CardID: 14
+CardID: 30
+
+------------------------
+These are the cards played this round:
+
+ 
+ROUND: 25
+Card Name: 
+Hornet
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 3
+Attribute 4: 4
+Attribute 5: 1
+Card Name: 
+Vanguard
+Attribute 1: 3
+Attribute 2: 4
+Attribute 3: 5
+Attribute 4: 5
+Attribute 5: 2
+Card Name: 
+Avenger
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 4
+Attribute 4: 3
+Attribute 5: 2
+
+These are the contents of players' decks after a round:
+
+ 
+Player1
+CardID: 12
+CardID: 4
+CardID: 11
+Player2
+CardID: 8
+CardID: 27
+CardID: 32
+CardID: 39
+CardID: 2
+Player3
+CardID: 26
+CardID: 38
+CardID: 7
+CardID: 20
+CardID: 5
+CardID: 23
+CardID: 3
+CardID: 24
+CardID: 35
+CardID: 1
+CardID: 37
+CardID: 31
+CardID: 28
+CardID: 40
+CardID: 25
+CardID: 18
+CardID: 21
+CardID: 22
+CardID: 15
+CardID: 17
+CardID: 36
+CardID: 10
+CardID: 6
+CardID: 29
+CardID: 19
+CardID: 13
+CardID: 16
+CardID: 9
+CardID: 34
+CardID: 33
+CardID: 14
+CardID: 30
+
+------------------------
+These are the cards played this round:
+
+ 
+ROUND: 26
+Card Name: 
+Sabre
+Attribute 1: 2
+Attribute 2: 7
+Attribute 3: 2
+Attribute 4: 5
+Attribute 5: 0
+Card Name: 
+Idris
+Attribute 1: 8
+Attribute 2: 2
+Attribute 3: 7
+Attribute 4: 10
+Attribute 5: 6
+Card Name: 
+Vanguard
+Attribute 1: 3
+Attribute 2: 4
+Attribute 3: 5
+Attribute 4: 5
+Attribute 5: 2
+
+These are the contents of players' decks after a round:
+
+ 
+Player1
+CardID: 4
+CardID: 11
+Player2
+CardID: 27
+CardID: 32
+CardID: 39
+CardID: 2
+CardID: 12
+CardID: 8
+CardID: 26
+Player3
+CardID: 38
+CardID: 7
+CardID: 20
+CardID: 5
+CardID: 23
+CardID: 3
+CardID: 24
+CardID: 35
+CardID: 1
+CardID: 37
+CardID: 31
+CardID: 28
+CardID: 40
+CardID: 25
+CardID: 18
+CardID: 21
+CardID: 22
+CardID: 15
+CardID: 17
+CardID: 36
+CardID: 10
+CardID: 6
+CardID: 29
+CardID: 19
+CardID: 13
+CardID: 16
+CardID: 9
+CardID: 34
+CardID: 33
+CardID: 14
+CardID: 30
+
+------------------------
+These are the cards played this round:
+
+ 
+ROUND: 27
+Card Name: 
+Constellation
+Attribute 1: 4
+Attribute 2: 5
+Attribute 3: 7
+Attribute 4: 3
+Attribute 5: 4
+Card Name: 
+350r
+Attribute 1: 1
+Attribute 2: 9
+Attribute 3: 2
+Attribute 4: 3
+Attribute 5: 0
+Card Name: 
+Sabre
+Attribute 1: 2
+Attribute 2: 7
+Attribute 3: 2
+Attribute 4: 5
+Attribute 5: 0
+
+These are the contents of players' decks after a round:
+
+ 
+Player1
+CardID: 11
+Player2
+CardID: 32
+CardID: 39
+CardID: 2
+CardID: 12
+CardID: 8
+CardID: 26
+Player3
+CardID: 7
+CardID: 20
+CardID: 5
+CardID: 23
+CardID: 3
+CardID: 24
+CardID: 35
+CardID: 1
+CardID: 37
+CardID: 31
+CardID: 28
+CardID: 40
+CardID: 25
+CardID: 18
+CardID: 21
+CardID: 22
+CardID: 15
+CardID: 17
+CardID: 36
+CardID: 10
+CardID: 6
+CardID: 29
+CardID: 19
+CardID: 13
+CardID: 16
+CardID: 9
+CardID: 34
+CardID: 33
+CardID: 14
+CardID: 30
+CardID: 4
+CardID: 27
+CardID: 38
+
+------------------------
+These are the cards played this round:
+
+ 
+ROUND: 28
+Card Name: 
+Orion
+Attribute 1: 10
+Attribute 2: 1
+Attribute 3: 6
+Attribute 4: 2
+Attribute 5: 9
+Card Name: 
+Hornet
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 3
+Attribute 4: 4
+Attribute 5: 1
+Card Name: 
+Hurricane
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 3
+Attribute 4: 5
+Attribute 5: 0
+
+These are the contents of players' decks after a round:
+
+ 
+Player1
+CardID: 11
+CardID: 32
+CardID: 7
+Player2
+CardID: 39
+CardID: 2
+CardID: 12
+CardID: 8
+CardID: 26
+Player3
+CardID: 20
+CardID: 5
+CardID: 23
+CardID: 3
+CardID: 24
+CardID: 35
+CardID: 1
+CardID: 37
+CardID: 31
+CardID: 28
+CardID: 40
+CardID: 25
+CardID: 18
+CardID: 21
+CardID: 22
+CardID: 15
+CardID: 17
+CardID: 36
+CardID: 10
+CardID: 6
+CardID: 29
+CardID: 19
+CardID: 13
+CardID: 16
+CardID: 9
+CardID: 34
+CardID: 33
+CardID: 14
+CardID: 30
+CardID: 4
+CardID: 27
+CardID: 38
+
+------------------------
+These are the cards played this round:
+
+ 
+ROUND: 29
+Card Name: 
+Orion
+Attribute 1: 10
+Attribute 2: 1
+Attribute 3: 6
+Attribute 4: 2
+Attribute 5: 9
+Card Name: 
+Vanguard
+Attribute 1: 3
+Attribute 2: 4
+Attribute 3: 5
+Attribute 4: 5
+Attribute 5: 2
+Card Name: 
+Hurricane
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 3
+Attribute 4: 5
+Attribute 5: 0
+
+These are the contents of players' decks after a round:
+
+ 
+Player1
+CardID: 32
+CardID: 7
+CardID: 11
+CardID: 39
+CardID: 20
+Player2
+CardID: 2
+CardID: 12
+CardID: 8
+CardID: 26
+Player3
+CardID: 5
+CardID: 23
+CardID: 3
+CardID: 24
+CardID: 35
+CardID: 1
+CardID: 37
+CardID: 31
+CardID: 28
+CardID: 40
+CardID: 25
+CardID: 18
+CardID: 21
+CardID: 22
+CardID: 15
+CardID: 17
+CardID: 36
+CardID: 10
+CardID: 6
+CardID: 29
+CardID: 19
+CardID: 13
+CardID: 16
+CardID: 9
+CardID: 34
+CardID: 33
+CardID: 14
+CardID: 30
+CardID: 4
+CardID: 27
+CardID: 38
+
+------------------------
+These are the cards played this round:
+
+ 
+ROUND: 30
+Card Name: 
+Hornet
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 3
+Attribute 4: 4
+Attribute 5: 1
+Card Name: 
+Avenger
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 4
+Attribute 4: 3
+Attribute 5: 2
+Card Name: 
+Hawk
+Attribute 1: 1
+Attribute 2: 3
+Attribute 3: 2
+Attribute 4: 4
+Attribute 5: 0
+
+This is the drawPile:
+
+ 
+ROUND: 30
+Card Name: 
+Hornet
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 3
+Attribute 4: 4
+Attribute 5: 1
+Card Name: 
+Avenger
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 4
+Attribute 4: 3
+Attribute 5: 2
+Card Name: 
+Hawk
+Attribute 1: 1
+Attribute 2: 3
+Attribute 3: 2
+Attribute 4: 4
+Attribute 5: 0
+
+These are the contents of players' decks after a round:
+
+ 
+Player1
+CardID: 7
+CardID: 11
+CardID: 39
+CardID: 20
+Player2
+CardID: 12
+CardID: 8
+CardID: 26
+Player3
+CardID: 23
+CardID: 3
+CardID: 24
+CardID: 35
+CardID: 1
+CardID: 37
+CardID: 31
+CardID: 28
+CardID: 40
+CardID: 25
+CardID: 18
+CardID: 21
+CardID: 22
+CardID: 15
+CardID: 17
+CardID: 36
+CardID: 10
+CardID: 6
+CardID: 29
+CardID: 19
+CardID: 13
+CardID: 16
+CardID: 9
+CardID: 34
+CardID: 33
+CardID: 14
+CardID: 30
+CardID: 4
+CardID: 27
+CardID: 38
+
+------------------------
+These are the cards played this round:
+
+ 
+ROUND: 31
+Card Name: 
+Hurricane
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 3
+Attribute 4: 5
+Attribute 5: 0
+Card Name: 
+Sabre
+Attribute 1: 2
+Attribute 2: 7
+Attribute 3: 2
+Attribute 4: 5
+Attribute 5: 0
+Card Name: 
+Merchantman
+Attribute 1: 7
+Attribute 2: 3
+Attribute 3: 5
+Attribute 4: 6
+Attribute 5: 8
+
+This is the drawPile:
+
+ 
+ROUND: 31
+
+These are the contents of players' decks after a round:
+
+ 
+Player1
+CardID: 11
+CardID: 39
+CardID: 20
+Player2
+CardID: 8
+CardID: 26
+Player3
+CardID: 3
+CardID: 24
+CardID: 35
+CardID: 1
+CardID: 37
+CardID: 31
+CardID: 28
+CardID: 40
+CardID: 25
+CardID: 18
+CardID: 21
+CardID: 22
+CardID: 15
+CardID: 17
+CardID: 36
+CardID: 10
+CardID: 6
+CardID: 29
+CardID: 19
+CardID: 13
+CardID: 16
+CardID: 9
+CardID: 34
+CardID: 33
+CardID: 14
+CardID: 30
+CardID: 4
+CardID: 27
+CardID: 38
+CardID: 7
+CardID: 12
+CardID: 23
+CardID: 32
+CardID: 2
+CardID: 5
+
+------------------------
+These are the cards played this round:
+
+ 
+ROUND: 32
+Card Name: 
+Orion
+Attribute 1: 10
+Attribute 2: 1
+Attribute 3: 6
+Attribute 4: 2
+Attribute 5: 9
+Card Name: 
+Idris
+Attribute 1: 8
+Attribute 2: 2
+Attribute 3: 7
+Attribute 4: 10
+Attribute 5: 6
+Card Name: 
+Carrack
+Attribute 1: 6
+Attribute 2: 2
+Attribute 3: 10
+Attribute 4: 4
+Attribute 5: 6
+
+This is the drawPile:
+
+ 
+ROUND: 32
+Card Name: 
+Orion
+Attribute 1: 10
+Attribute 2: 1
+Attribute 3: 6
+Attribute 4: 2
+Attribute 5: 9
+Card Name: 
+Idris
+Attribute 1: 8
+Attribute 2: 2
+Attribute 3: 7
+Attribute 4: 10
+Attribute 5: 6
+Card Name: 
+Carrack
+Attribute 1: 6
+Attribute 2: 2
+Attribute 3: 10
+Attribute 4: 4
+Attribute 5: 6
+
+These are the contents of players' decks after a round:
+
+ 
+Player1
+CardID: 39
+CardID: 20
+Player2
+CardID: 26
+Player3
+CardID: 24
+CardID: 35
+CardID: 1
+CardID: 37
+CardID: 31
+CardID: 28
+CardID: 40
+CardID: 25
+CardID: 18
+CardID: 21
+CardID: 22
+CardID: 15
+CardID: 17
+CardID: 36
+CardID: 10
+CardID: 6
+CardID: 29
+CardID: 19
+CardID: 13
+CardID: 16
+CardID: 9
+CardID: 34
+CardID: 33
+CardID: 14
+CardID: 30
+CardID: 4
+CardID: 27
+CardID: 38
+CardID: 7
+CardID: 12
+CardID: 23
+CardID: 32
+CardID: 2
+CardID: 5
+
+------------------------
+These are the cards played this round:
+
+ 
+ROUND: 33
+Card Name: 
+Vanguard
+Attribute 1: 3
+Attribute 2: 4
+Attribute 3: 5
+Attribute 4: 5
+Attribute 5: 2
+Card Name: 
+Vanguard
+Attribute 1: 3
+Attribute 2: 4
+Attribute 3: 5
+Attribute 4: 5
+Attribute 5: 2
+Card Name: 
+Orion
+Attribute 1: 10
+Attribute 2: 1
+Attribute 3: 6
+Attribute 4: 2
+Attribute 5: 9
+
+This is the drawPile:
+
+ 
+ROUND: 33
+
+These are the contents of players' decks after a round:
+
+ 
+Player1
+CardID: 20
+Player2
+Player3
+CardID: 35
+CardID: 1
+CardID: 37
+CardID: 31
+CardID: 28
+CardID: 40
+CardID: 25
+CardID: 18
+CardID: 21
+CardID: 22
+CardID: 15
+CardID: 17
+CardID: 36
+CardID: 10
+CardID: 6
+CardID: 29
+CardID: 19
+CardID: 13
+CardID: 16
+CardID: 9
+CardID: 34
+CardID: 33
+CardID: 14
+CardID: 30
+CardID: 4
+CardID: 27
+CardID: 38
+CardID: 7
+CardID: 12
+CardID: 23
+CardID: 32
+CardID: 2
+CardID: 5
+CardID: 39
+CardID: 26
+CardID: 24
+CardID: 11
+CardID: 8
+CardID: 3
+
+------------------------
+These are the cards played this round:
+
+ 
+ROUND: 34
+Card Name: 
+Hurricane
+Attribute 1: 2
+Attribute 2: 5
+Attribute 3: 3
+Attribute 4: 5
+Attribute 5: 0
+Card Name: 
+m50
+Attribute 1: 1
+Attribute 2: 10
+Attribute 3: 2
+Attribute 4: 2
+Attribute 5: 0
+
+These are the contents of players' decks after a round:
+
+ 
+Player1
+Player2
+CardID: 1
+CardID: 37
+CardID: 31
+CardID: 28
+CardID: 40
+CardID: 25
+CardID: 18
+CardID: 21
+CardID: 22
+CardID: 15
+CardID: 17
+CardID: 36
+CardID: 10
+CardID: 6
+CardID: 29
+CardID: 19
+CardID: 13
+CardID: 16
+CardID: 9
+CardID: 34
+CardID: 33
+CardID: 14
+CardID: 30
+CardID: 4
+CardID: 27
+CardID: 38
+CardID: 7
+CardID: 12
+CardID: 23
+CardID: 32
+CardID: 2
+CardID: 5
+CardID: 39
+CardID: 26
+CardID: 24
+CardID: 11
+CardID: 8
+CardID: 3
+CardID: 20
+CardID: 35
+
+------------------------
