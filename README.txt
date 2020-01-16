@@ -12,4 +12,4 @@ OPEN BROWSER ( Preferably Google chrome / Firefox )
 GOTO "http://localhost:7777/toptrumps/"
 Play the Game.
 Thank you, and please feel free to contact me via email on vokjohnson@gmail.com or call me +447597231306 for any questions on the game.
-Thank you for taking the timw
+Thank you for taking the time
